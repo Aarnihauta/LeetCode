@@ -1,9 +1,10 @@
 ﻿using System.Reflection.Emit;
 
 namespace TrueLeetCode.Leetcode;
+
+//https://leetcode.com/problems/sum-of-two-integers
 public class L371
 {
-    //https://leetcode.com/problems/sum-of-two-integers
     public int TwoSum(int a, int b)
     {
         DynamicMethod method = new DynamicMethod("leetcode_371", typeof(int), new Type[] { typeof(int), typeof(int) });

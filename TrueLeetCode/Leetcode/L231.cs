@@ -1,9 +1,10 @@
 ﻿using System.Reflection.Emit;
 
 namespace TrueLeetCode.Leetcode;
+
+//https://leetcode.com/problems/power-of-two/
 public class L231
 {
-    //https://leetcode.com/problems/power-of-two/
     public static bool IsPowerOfTwo(int n)
     {
         DynamicMethod method = new DynamicMethod("leetcode_231", typeof(bool), new Type[] { typeof(int) });
