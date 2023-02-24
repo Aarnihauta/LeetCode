@@ -13,7 +13,7 @@ public class OrderedStream
     public IList<string> Insert(int idKey, string value)
     {
         var result = new List<string>();
-        _array[idKey] = value;
+        _array[idKey - 1] = value;
 
         while (_pointer < _array.Length && _array[_pointer] != null)
         {
