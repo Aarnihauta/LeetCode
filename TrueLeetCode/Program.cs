@@ -1,5 +1,5 @@
 ﻿using TrueLeetCode.Leetcode;
 
-var l = new L83();
+L206 l = new L206();
 
-var q = l.DeleteDuplicates(new(1, new(1, new(2, new(3, new(3, new(4)))))));
+l.ReverseList(new ListNode(0, new ListNode(1, new ListNode(2))));
