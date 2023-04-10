@@ -1,5 +1,10 @@
-﻿using TrueLeetCode.Leetcode;
+﻿using System.Runtime.CompilerServices;
+using TrueLeetCode.Leetcode.LinkedList;
 
-L206 l = new L206();
+MyHashSet f = new MyHashSet();
+f.Add(742);
+f.Add(110);
+f.Remove(110);
+f.Remove(-54);
 
-l.ReverseList(new ListNode(0, new ListNode(1, new ListNode(2))));
+Console.WriteLine("");
