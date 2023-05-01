@@ -3,117 +3,46 @@
 //https://leetcode.com/problems/design-hashset
 public class MyHashSet
 {
-    private int[] _buckets;
-    private int _freeCount;
-    private Entry[] _entries;
-    public MyHashSet()
+    private List<int>[] _table = new List<int>[7];
+    public int Count { get; set; }
+    public void Add(int item)
     {
-        _freeCount = 1;
-        _buckets = new int[1];
-        _entries = new Entry[1];
-    }
+        int entry = GetEntry(item);
+        var list = _table[entry] ??= new List<int>();
 
-    public void Add(int key)
-    {
-        var entries = _entries;
-        int hashCode = key.GetHashCode();
-        ref var bucket = ref GetBucketRef(hashCode);
-        int i = bucket - 1;
+        if (list.Contains(item))
+            return;
 
-        while (i >= 0)
+        if(Count == _table.Length)
         {
-            ref var entry = ref entries[i];
-
-            if (entry.HashCode == hashCode)
-            {
-                return;
-            }
-            i = entry.Next;
+            Array.Resize(ref _table, Count * 2 - 1);
         }
 
-        int index;
-
-        if (_freeCount > 0)
-        {
-            _freeCount--;
-            index = _buckets.Length - 1 - _freeCount;
-        }
-        else
-        {
-            int count = _buckets.Length;
-
-            if (count == entries.Length)
-            {
-                Resize(_buckets.Length + 4);
-                bucket = ref GetBucketRef(hashCode);
-                entries = _entries;
-            }
-            index = count;
-        }
-
-        ref Entry data = ref entries[index];
-        data.HashCode = hashCode;
-        data.Next = bucket - 1;
-        data.Value = key;
-        bucket = index + 1;
+        Count++;
+        list.Add(item);
     }
 
-    public void Remove(int key)
+    public void Remove(int item)
     {
-        var entries = _entries;
-        int hashCode = key.GetHashCode();
-        ref var bucket = ref GetBucketRef(hashCode);
-        int i = bucket - 1;
-        int last = -1;
+        int entry = GetEntry(item);
+        var list = _table[entry] ??= new List<int>();
 
-        while (i >= 0)
-        {
-            ref Entry entry = ref entries[i];
+        if (!list.Contains(item))
+            return;
 
-            if (entry.HashCode == hashCode)
-            {
-                if (last < 0)
-                {
-                    bucket = entry.Next + 1;
-                }
-                else
-                {
-                    entries[last].Next = entry.Next;
-                }
-                _freeCount++;
-                return;
-            }
-
-            last = i;
-            i = entry.Next;
-        }
+        Count--;
+        list.Remove(item);
     }
 
-    public bool Contains(int key)
+    public bool Contains(int item) => _table[GetEntry(item)]?.Contains(item) ?? false;
+
+    private int GetEntry(int item)
     {
-        return true;
+        return item.GetHashCode() % _table.Length;
     }
 
-    private void Resize(int newSize)
+    private void Resize()
     {
-        var newEntries = new Entry[newSize];
-        Array.Copy(_entries, newEntries, _entries.Length);
-        _entries = newEntries;
 
-        var newBuckets = new int[newSize];
-        Array.Copy(_buckets, newBuckets, _buckets.Length);
-        _buckets = newBuckets;
-    }
-
-    private ref int GetBucketRef(int hashCode)
-    {
-        return ref _buckets[(uint)hashCode % ((uint)_buckets.Length + 1)];
-    }
-
-    private struct Entry
-    {
-        public int HashCode;
-        public int Next;
-        public int Value { get; set; }
     }
 }
