@@ -5,6 +5,7 @@ namespace TrueLeetCode.Leetcode;
 //https://leetcode.com/problems/power-of-two/
 public class L231
 {
+    //n & (n - 1) > 0
     public static bool IsPowerOfTwo(int n)
     {
         DynamicMethod method = new DynamicMethod("leetcode_231", typeof(bool), new Type[] { typeof(int) });
