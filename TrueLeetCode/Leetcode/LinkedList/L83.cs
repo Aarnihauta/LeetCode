@@ -5,19 +5,16 @@ public class L83
 {
     public ListNode DeleteDuplicates(ListNode head)
     {
-        var result = head;
-
-        while (head != null && head.next != null)
+        var current = head;
+        
+        while(current != null)
         {
-            if (head.val == head.next.val)
+            while(current.next != null && current.next.val == current.val)
             {
-                head.next = head.next.next;
-                continue;
+                current.next = current.next.next;
             }
-
-            head = head.next;
+            current = current.next;
         }
-
-        return result;
+        return head;
     }
 }
