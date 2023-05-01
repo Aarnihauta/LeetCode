@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.Leetcode.LinkedList;
+﻿namespace TrueLeetCode.Leetcode.HashTable;
 
 //https://leetcode.com/problems/design-hashset
 public class MyHashSet
@@ -13,7 +13,7 @@ public class MyHashSet
         if (list.Contains(item))
             return;
 
-        if(Count == _table.Length)
+        if (Count == _table.Length)
         {
             Array.Resize(ref _table, Count * 2 - 1);
         }
@@ -39,10 +39,5 @@ public class MyHashSet
     private int GetEntry(int item)
     {
         return item.GetHashCode() % _table.Length;
-    }
-
-    private void Resize()
-    {
-
     }
 }
