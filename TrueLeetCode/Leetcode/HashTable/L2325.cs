@@ -1,5 +1,7 @@
 ﻿using System.Text;
 
+namespace TrueLeetCode.Leetcode.HashTable;
+
 //https://leetcode.com/problems/decode-the-message/
 public class L2325
 {
