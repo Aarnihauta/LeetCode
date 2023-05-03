@@ -1,14 +1,16 @@
 ﻿namespace TrueLeetCode.Leetcode.Trees;
+
+//https://leetcode.com/problems/n-ary-tree-preorder-traversal/
 public class L589
 {
     public IList<int> Preorder(Node root)
     {
         var list = new List<int>();
-        PreorderTraversal(root, list);
+        Preorder(root, list);
         return list;
     }
 
-    private void PreorderTraversal(Node root, List<int> list)
+    private void Preorder(Node root, List<int> list)
     {
         if (root != null)
         {
@@ -17,7 +19,7 @@ public class L589
             {
                 foreach (var child in root.children)
                 {
-                    PreorderTraversal(child, list);
+                    Preorder(child, list);
                 }
             }
         }
