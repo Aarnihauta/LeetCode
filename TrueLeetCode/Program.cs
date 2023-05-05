@@ -2,14 +2,20 @@
 
 var tree = new TreeNode
 {
-    left = new TreeNode(9),
-    right = new TreeNode(20)
+    val = 10,
+    left = new TreeNode
     {
-        left = new TreeNode(15),
+        val = 5,
+        left = new TreeNode(3),
         right = new TreeNode(7)
+    },
+    right = new TreeNode
+    {
+        val = 15,
+        right = new TreeNode(18)
     }
 };
 
-var l = new L104();
-var r = l.MaxDepth(tree);
+var l = new L938();
+var r = l.RangeSumBST(tree, 7, 15);
 Console.WriteLine();
