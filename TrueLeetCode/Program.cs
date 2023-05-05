@@ -2,20 +2,16 @@
 
 var tree = new TreeNode
 {
-    val = 10,
-    left = new TreeNode
-    {
-        val = 5,
-        left = new TreeNode(3),
-        right = new TreeNode(7)
-    },
+    val = 2,
+    left = new TreeNode(1),
     right = new TreeNode
     {
-        val = 15,
-        right = new TreeNode(18)
+        val = 3,
+        left = new TreeNode(0),
+        right = new TreeNode(1)
     }
 };
 
-var l = new L938();
-var r = l.RangeSumBST(tree, 7, 15);
+var l = new L2331();
+var r = l.EvaluateTree(tree);
 Console.WriteLine();
