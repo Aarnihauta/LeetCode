@@ -12,7 +12,6 @@ public class TreeNode
         this.right = right;
     }
 
-
     public override string ToString()
     {
         return val.ToString();
