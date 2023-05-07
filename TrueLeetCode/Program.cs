@@ -1,19 +1,18 @@
 ﻿using TrueLeetCode.Leetcode.Trees;
 
-var root1 = new TreeNode
+var root = new TreeNode
 {
-    val = 18,
-    left = new TreeNode(2),
+    val = 1,
     right = new TreeNode
     {
-        val = 22,
-        right = new TreeNode(63)
+        val = 2,
+        left = new TreeNode
         {
-            right = new TreeNode(84)
+            val =3
         }
     }
 };
 
-var q = new L700();
-var c = q.SearchBST(root1, 63);
-Console.WriteLine(c);
+L94 l = new L94();
+
+l.InorderTraversal(root);
