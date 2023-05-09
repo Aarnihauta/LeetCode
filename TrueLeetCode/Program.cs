@@ -1,17 +1,17 @@
 ﻿using TrueLeetCode.Leetcode.Trees;
 
+var l647 = new L637();
 
-int a = 1;
-int b = 0;
-int c = 1;
-int d = 1;
+var tree = new TreeNode
+{
+    val = 3,
+    left = new TreeNode(9),
+    right = new TreeNode
+    {
+        val = 20,
+        left = new TreeNode(15),
+        right = new TreeNode(7)
+    }
+};
 
-int curr = 0;
-
-curr = (curr << 1) | a;
-curr = (curr << 1) | b;
-curr = (curr << 1) | c;
-
-curr = (curr - 1) | d;
-
-Console.WriteLine();
+l647.AverageOfLevels(tree);
