@@ -1,19 +1,7 @@
-﻿using TrueLeetCode.Leetcode.Trees;
+﻿using TrueLeetCode.Leetcode.Strings;
 
-var tree = new TreeNode
-{
-    val = 1,
-    left = null,
-    right = new TreeNode
-    {
-        val = 2,
-        left = new TreeNode
-        {
-            val = 3
-        }
-    }
-};
+var l = new L609();
 
-var l = new L145();
+string[] arr = { "root/a 1.txt(abcd) 2.txt(efsfgh) 3.txt(efsfgh)", "root/c 3.txt(abdfcd)", "root/c/d 4.txt(efggdfh)" };
 
-l.PostorderTraversal(tree);
+var res = l.FindDuplicate(arr);
