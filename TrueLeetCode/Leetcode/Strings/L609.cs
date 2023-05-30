@@ -40,12 +40,6 @@ internal class FileData
     {
         return Path.Combine(RelativePath, FileName);
     }
-
-    public override bool Equals(object? obj)
-    {
-        var o = obj as FileData;
-        return o?.Content == Content;
-    }
 }
 
 internal class FileDataBuilder
