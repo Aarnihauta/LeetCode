@@ -1,11 +1,10 @@
 ﻿namespace TrueLeetCode.CSC.Heap;
 public class BinaryHeap
 {
-    private List<int> _items;
+    private List<int> _items = new List<int>();
 
     public BinaryHeap()
     {
-        _items = new List<int>();
     }
     
     public int Count => _items.Count;
@@ -16,6 +15,7 @@ public class BinaryHeap
         {
             return _items[0];
         }
+
         return default(int);
     }
 
@@ -68,12 +68,12 @@ public class BinaryHeap
             leftIndex = 2 * currentIndex + 1;
             rightIndex = 2 * currentIndex + 2;
 
-            if (_items[leftIndex] > _items[maxIndex])
+            if (leftIndex < Count && _items[leftIndex] > _items[maxIndex])
             {
                 maxIndex = leftIndex;
             }
 
-            if (_items[rightIndex] > _items[maxIndex])
+            if (rightIndex < Count && _items[rightIndex] > _items[maxIndex])
             {
                 maxIndex = rightIndex;
             }

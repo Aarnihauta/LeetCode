@@ -10,3 +10,9 @@ heap.Add(4);
 heap.Add(13);
 heap.Add(15);
 heap.Add(14);
+
+
+while(heap.Count > 0)
+{
+    Console.WriteLine(heap.GetMax()); 
+}
