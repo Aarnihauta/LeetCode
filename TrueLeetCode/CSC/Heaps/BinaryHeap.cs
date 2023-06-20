@@ -5,13 +5,22 @@ public class BinaryHeap
 
     public BinaryHeap()
     {
+
     }
-    
+    public BinaryHeap(List<int> items)
+    {
+        _items = items;
+        for (int i = Count; i >= 0; i--)
+        {
+            SiftUp(i);
+        }
+    }
+
     public int Count => _items.Count;
 
     public int Peek()
     {
-        if(Count > 0)
+        if (Count > 0)
         {
             return _items[0];
         }
@@ -24,7 +33,7 @@ public class BinaryHeap
         var result = _items[0];
         _items[0] = _items[^1];
         _items.RemoveAt(Count - 1);
-        
+
         SiftUp(0);
 
         return result;
@@ -78,7 +87,7 @@ public class BinaryHeap
                 maxIndex = rightIndex;
             }
 
-            if(maxIndex == currentIndex)
+            if (maxIndex == currentIndex)
             {
                 break;
             }
