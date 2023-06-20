@@ -25,7 +25,7 @@ public class BinaryHeap
         _items[0] = _items[^1];
         _items.RemoveAt(Count - 1);
         
-        Sort(0);
+        SiftUp(0);
 
         return result;
     }
@@ -57,7 +57,7 @@ public class BinaryHeap
         _items[parentIndex] = temp;
     }
 
-    private void Sort(int currentIndex)
+    private void SiftUp(int currentIndex)
     {
         int leftIndex;
         int rightIndex;
