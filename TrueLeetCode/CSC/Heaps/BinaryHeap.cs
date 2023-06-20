@@ -2,6 +2,12 @@
 public class BinaryHeap
 {
     private List<int> _items;
+
+    public BinaryHeap()
+    {
+        _items = new List<int>();
+    }
+    
     public int Count => _items.Count;
 
     public int Peek()
@@ -13,7 +19,18 @@ public class BinaryHeap
         return default(int);
     }
 
-    public void Enqueue(int item)
+    public int GetMax()
+    {
+        var result = _items[0];
+        _items[0] = _items[^1];
+        _items.RemoveAt(Count - 1);
+        
+        Sort(0);
+
+        return result;
+    }
+
+    public void Add(int item)
     {
         _items.Add(item);
         var currentIndex = Count - 1;
@@ -38,5 +55,36 @@ public class BinaryHeap
         var temp = _items[currentIndex];
         _items[currentIndex] = _items[parentIndex];
         _items[parentIndex] = temp;
+    }
+
+    private void Sort(int currentIndex)
+    {
+        int leftIndex;
+        int rightIndex;
+        int maxIndex = currentIndex;
+
+        while (currentIndex < Count)
+        {
+            leftIndex = 2 * currentIndex + 1;
+            rightIndex = 2 * currentIndex + 2;
+
+            if (_items[leftIndex] > _items[maxIndex])
+            {
+                maxIndex = leftIndex;
+            }
+
+            if (_items[rightIndex] > _items[maxIndex])
+            {
+                maxIndex = rightIndex;
+            }
+
+            if(maxIndex == currentIndex)
+            {
+                break;
+            }
+
+            Swap(currentIndex, maxIndex);
+            currentIndex = maxIndex;
+        }
     }
 }
