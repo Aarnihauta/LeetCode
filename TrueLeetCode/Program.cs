@@ -1,6 +1,6 @@
-﻿using TrueLeetCode.Leetcode.DP;
+﻿using TrueLeetCode.CSC.DP;
 
-int[] arr = { 2, 3, 0, 1, 4 };
-var l = new L55();
+Grasshopper g = new Grasshopper();
 
-l.CanJump(arr);
+var c = g.GetPathsCount(15);
+Console.WriteLine(c);
