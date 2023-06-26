@@ -20,6 +20,6 @@ public class OrderedStream
             result.Add(_array[_pointer]);
             _pointer++;
         }
-        return result;
+        return result; 
     }
 }
