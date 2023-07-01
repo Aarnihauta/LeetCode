@@ -1,15 +1,15 @@
 ﻿namespace TrueLeetCode.Leetcode.DP;
 
-//https://leetcode.com/problems/pascals-triangle/
-public class L118
+//https://leetcode.com/problems/pascals-triangle-ii/
+public class L119
 {
-    public IList<IList<int>> Generate(int numRows)
+    public IList<int> GetRow(int rowIndex)
     {
-        var dp = new int[numRows][];
+        var dp = new int[rowIndex + 1][];
 
         dp[0] = new int[] { 1 };
-         
-        for (int i = 1; i < numRows; i++)
+
+        for (int i = 1; i < rowIndex + 1; i++)
         {
             int k = dp[i - 1].Length;
             dp[i] = new int[k + 1];
@@ -22,6 +22,6 @@ public class L118
             }
         }
 
-        return dp;
+        return dp[rowIndex];
     }
 }
