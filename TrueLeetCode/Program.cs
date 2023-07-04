@@ -1,5 +1,5 @@
 using TrueLeetCode.Leetcode.DP;
 
-var l = new L119();
+var l = new L121();
 
-l.GetRow(3);
+l.MaxProfit(new int[] { 7, 1, 5, 3, 6, 4 });
