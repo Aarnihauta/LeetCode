@@ -1,6 +1,6 @@
 ﻿using System.Reflection.Emit;
 
-namespace TrueLeetCode.Leetcode;
+namespace TrueLeetCode.Leetcode._IL;
 
 //https://leetcode.com/problems/power-of-two/
 public class L231

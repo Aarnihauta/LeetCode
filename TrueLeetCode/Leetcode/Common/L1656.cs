@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.Leetcode;
+﻿namespace TrueLeetCode.Leetcode.Common;
 
 //https://leetcode.com/problems/design-an-ordered-stream
 public class OrderedStream
