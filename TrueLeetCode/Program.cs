@@ -1,5 +1,5 @@
 using TrueLeetCode.Leetcode.HashTable;
 
-var l = new L49();
+var l = new L347();
 
-l.GroupAnagrams(new string[] { "eat", "tea", "tan", "ate", "nat", "bat" });
+l.TopKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2);
