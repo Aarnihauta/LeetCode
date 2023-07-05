@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.DP;
+using TrueLeetCode.Leetcode.HashTable;
 
-var l = new L198();
+var l = new L49();
 
-l.Rob(new int[] { 2, 7, 9, 3, 1 });
+l.GroupAnagrams(new string[] { "eat", "tea", "tan", "ate", "nat", "bat" });
