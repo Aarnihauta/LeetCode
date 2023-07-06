@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.HashTable;
+using TrueLeetCode.Leetcode.Common;
 
-var l = new L347();
+var l = new L238();
 
-l.TopKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2);
+l.ProductExceptSelf(new int[] { 1, 2, 3, 4 });
