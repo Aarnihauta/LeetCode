@@ -1,5 +1,18 @@
-using TrueLeetCode.Leetcode.HashTable;
 
-L128 l = new L128();
+using TrueLeetCode.Leetcode.Stack;
 
-l.LongestConsecutive(new int[] { 100, 4, 200, 1, 3, 2 });
+MinStack stack = new MinStack();
+
+stack.Push(-10);
+stack.Push(14);
+stack.Push(-20);
+var p = stack.Top();
+
+stack.Pop();
+stack.Push(10);
+stack.Push(-7);
+stack.Push(-7);
+stack.Pop();
+stack.Pop();
+
+Console.WriteLine();
