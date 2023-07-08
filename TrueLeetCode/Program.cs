@@ -1,5 +1,5 @@
 using TrueLeetCode.Leetcode.Stack;
 
-var l = new L150();
+var l = new L22();
 
-l.EvalRPN(new string[] { "4", "13", "5", "/", "+" });
+l.GenerateParenthesis(3);
