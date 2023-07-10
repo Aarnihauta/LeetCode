@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.HashTable;
+using TrueLeetCode.Leetcode.Pointers;
 
-L84 l = new L84();
+var l = new L125();
 
-l.LargestRectangleArea(new int[] { 2, 1, 5, 6, 2, 3 });
+l.IsPalindrome("A man, a plan, a canal: Panama");
