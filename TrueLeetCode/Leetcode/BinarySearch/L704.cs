@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.Leetcode.Common;
+﻿namespace TrueLeetCode.Leetcode.BinarySearch;
 
 //https://leetcode.com/problems/binary-search/
 public class L704
@@ -8,10 +8,10 @@ public class L704
         int l = 0;
         int r = nums.Length - 1;
 
-        while(l <= r)
+        while (l <= r)
         {
             int mid = (l + r) / 2;
-            if (nums[mid] == target) 
+            if (nums[mid] == target)
             {
                 return mid;
             }
