@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.Pointers;
+using TrueLeetCode.Leetcode.Greedy;
 
-var l = new L15();
+var l = new L11();
 
-l.ThreeSum(new int[] { -1, 0, 1, 2, -1, -4, -2, -3, 3, 0, 4 });
+l.MaxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 });
