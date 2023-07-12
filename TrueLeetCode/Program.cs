@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.SlidingWindow;
+using TrueLeetCode.Leetcode.DP;
 
-var l = new L3();
+L121 l = new L121();
 
-l.LengthOfLongestSubstring("pwwkew");
+l.MaxProfit(new int[] { 1, 4, 2 });
