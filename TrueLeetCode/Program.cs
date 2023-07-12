@@ -1,5 +1,5 @@
 using TrueLeetCode.Leetcode.SlidingWindow;
 
-var l = new L1876();
+var l = new L3();
 
-l.CountGoodSubstrings("aababcabc");
+l.LengthOfLongestSubstring("pwwkew");
