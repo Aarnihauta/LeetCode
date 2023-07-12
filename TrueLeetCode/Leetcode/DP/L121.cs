@@ -5,7 +5,14 @@ public class L121
 {
     public int MaxProfit(int[] prices)
     {
-        //TODO: L121
-        return 0;
+        int profit = 0;
+        int min = prices[0];
+        foreach (var today in prices)
+        {
+            min = Math.Min(min, today);
+            profit = Math.Max(profit, today - min);
+        }
+
+        return profit;
     }
 }
