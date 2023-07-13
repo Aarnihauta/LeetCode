@@ -10,8 +10,9 @@ public class L239
 
         for (int i = k; i <= nums.Length; i++)
         {
-            var max = nums[(i - k)..i].Max();
-            result.Add(max);
+            var window = nums[(i - k)..i];
+            var set = new SortedSet<int>(window);
+            result.Add(set.Max);
         }
 
         return result.ToArray();
