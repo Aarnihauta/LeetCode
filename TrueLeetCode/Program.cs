@@ -1,5 +1,5 @@
 using TrueLeetCode.Leetcode.SlidingWindow;
 
-var l = new L567();
+var l = new L76();
 
-l.CheckInclusion("ab", "eidboaoo");
+l.MinWindow("ADOBECODEBANC", "ABC");
