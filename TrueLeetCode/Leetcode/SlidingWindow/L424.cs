@@ -11,7 +11,14 @@ public class L424
 
         for (int r = 0; r < s.Length; r++)
         {
-            Add(dict, s, r);
+            if (dict.ContainsKey(s[r]))
+            {
+                dict[s[r]]++;
+            }
+            else
+            {
+                dict.Add(s[r], 1);
+            }
             while ((r - l + 1) - dict.Max(x => x.Value) > k)
             {
                 dict[s[l]] -= 1;
@@ -22,17 +29,5 @@ public class L424
         }
 
         return res;
-    }
-
-    private void Add(Dictionary<char, int> dict, string s, int p)
-    {
-        if (dict.ContainsKey(s[p]))
-        {
-            dict[s[p]]++;
-        }
-        else
-        {
-            dict.Add(s[p], 1);
-        }
     }
 }
