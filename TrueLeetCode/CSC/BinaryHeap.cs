@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.CSC.Heap;
+﻿namespace TrueLeetCode.CSC;
 public class BinaryHeap
 {
     private List<int> _items = new List<int>();
@@ -25,7 +25,7 @@ public class BinaryHeap
             return _items[0];
         }
 
-        return default(int);
+        return default;
     }
 
     public int GetMax()

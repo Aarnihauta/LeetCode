@@ -1,16 +1,18 @@
 ﻿namespace TrueLeetCode.Leetcode;
+
+//https://leetcode.com/problems/middle-of-the-linked-list
 public class L876
 {
-    //https://leetcode.com/problems/middle-of-the-linked-list
     public ListNode MiddleNode(ListNode head)
     {
-        List<ListNode> list = new List<ListNode>();
+        ListNode fast = head;
 
-        while(head != null)
+        while (fast != null && fast.next != null)
         {
-            list.Add(head);
             head = head.next;
+            fast = fast.next.next;
         }
-        return list[list.Count / 2];
+
+        return head;
     }
 }
