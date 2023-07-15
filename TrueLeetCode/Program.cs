@@ -1,5 +1,7 @@
-using TrueLeetCode.Leetcode.SlidingWindow;
+using TrueLeetCode.Leetcode.Trees;
 
-var l = new L76();
+var l = new L543();
 
-l.MinWindow("ADOBECODEBANC", "ABC");
+var tree = new TreeNode(1, new TreeNode(2));
+
+l.DiameterOfBinaryTree(tree);
