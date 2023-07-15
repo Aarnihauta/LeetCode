@@ -5,10 +5,10 @@ public class L206
 {
     public ListNode ReverseList(ListNode head)
     {
+        ListNode prev = null;
         var curr = head;
-        var prev = default(ListNode);
 
-        while(curr != null)
+        while (curr != null)
         {
             var temp = curr.next;
             curr.next = prev;
@@ -16,20 +16,5 @@ public class L206
             curr = temp;
         }
         return prev;
-    }
-    public ListNode ReverseListRecoursive(ListNode head)
-    {
-        if (head == null)
-            return null;
-
-        var newHead = head;
-
-        if (head.next != null)
-        {
-            newHead = ReverseListRecoursive(head.next);
-            head.next.next = head;
-        }
-        head.next = null;
-        return newHead;
     }
 }
