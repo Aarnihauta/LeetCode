@@ -5,18 +5,26 @@ public class L2181
 {
     public ListNode MergeNodes(ListNode head)
     {
-        return null;
-    }
+        var node = new ListNode();
+        var result = node;
 
-    private ListNode CreateNode(ListNode node)
-    {
-        int sum = 0;
-        var current = node;
-        while(current?.val != 0)
+        if(head.val == 0)
         {
-            sum += current.val;
-            current = current.next;
+            head = head.next;
         }
-        return new ListNode(sum, current);
+
+        while(head != null)
+        {
+            if(head.val == 0 && head.next != null)
+            {
+                node.next = new ListNode();
+                node = node.next;
+            }
+
+            node.val += head.val;
+            head = head.next;
+        }
+
+        return result;
     }
 }
