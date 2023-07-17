@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.Arrays;
+using TrueLeetCode.Leetcode.Common;
 
-var l = new L665();
+var l = new L722();
 
-l.CheckPossibility(new int[] { 3,4,2,3 });
+l.RemoveComments(new string[] { "/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}" });
