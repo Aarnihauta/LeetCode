@@ -9,7 +9,6 @@ public class L722
         bool waitClosingComment = false;
         foreach (string line in source)
         {
-            bool trim = true;
             string content = string.Empty;
 
             if (waitClosingComment)
@@ -43,6 +42,7 @@ public class L722
                     else if (start > 0)
                     {
                         content = line[0..start];
+                        waitClosingComment = true;
                     }
                     else
                     {
@@ -54,22 +54,12 @@ public class L722
                     if (start > 0)
                     {
                         content = line[0..start];
-                        if (string.IsNullOrWhiteSpace(content))
-                        {
-                            trim = false;
-                        }
                     }
                 }
                 else
                 {
                     content = line;
                 }
-            }
-
-            if (trim)
-            {
-                content = content.TrimStart()
-                                 .TrimEnd();
             }
 
             if (!string.IsNullOrEmpty(content))
