@@ -1,11 +1,5 @@
 using TrueLeetCode.Leetcode.Arrays;
 
-var data = new int[][]
-{
-    new[] {1, 0},
-    new[] {1, 2},
-};
+var l = new L2089();
 
-L1351 l = new L1351();
-
-l.CountNegatives(data);
+l.TargetIndices(new[] { 1, 0, 5, 0, 2 }, 5);
