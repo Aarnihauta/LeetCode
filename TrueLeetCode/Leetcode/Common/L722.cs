@@ -17,7 +17,7 @@ public class L722
                 if (start == -1)
                 {
                     continue;
-                }
+                }   
                 if (start + 2 < line.Length)
                 {
                     content = line[(start + 2)..];
