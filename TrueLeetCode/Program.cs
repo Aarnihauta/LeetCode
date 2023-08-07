@@ -1,7 +1,6 @@
-using TrueLeetCode.Leetcode.Common;
+using TrueLeetCode.Leetcode.HashTable;
 
-var l = new L153();
+var l = new L387();
 
-var q = l.FindMin(new int[] { 3, 4, 5, 1, 2 });
-
-Console.WriteLine(q);
+var q = l.FirstUniqChar("bbbb");
+Console.WriteLine(  q);
