@@ -1,3 +1,4 @@
 using TrueLeetCode.Emax;
 
-Pow.BinPow(2, 10);
+var q = Euclid.LeastCommonMultiple( 16, 20);
+Console.WriteLine(q);

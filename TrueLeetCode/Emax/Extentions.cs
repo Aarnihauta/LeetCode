@@ -1,5 +1,5 @@
 ﻿namespace TrueLeetCode.Emax;
-public static class Extentions
+public static class MathExt
 {
     public static bool IsPrime(this int number)
     {
@@ -29,5 +29,12 @@ public static class Extentions
         }
 
         return true;
+    }
+
+    public static void Swap(ref int a, ref int b)
+    {
+        var c = a;
+        a = b; 
+        b = c;
     }
 }
