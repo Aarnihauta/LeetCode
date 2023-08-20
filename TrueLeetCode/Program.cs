@@ -1,4 +1,5 @@
 using TrueLeetCode.Emax;
 
-var q = Euclid.LeastCommonMultiple( 16, 20);
-Console.WriteLine(q);
+var arr = Eratosthenes.Sieve(12);
+
+Console.WriteLine(string.Join(", ", arr));
