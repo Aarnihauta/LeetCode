@@ -1,5 +1,7 @@
-using TrueLeetCode.Emax;
+using TrueLeetCode.Leetcode.Common;
 
-var arr = Eratosthenes.Sieve(12);
+var q = new L204();
 
-Console.WriteLine(string.Join(", ", arr));
+int r = q.CountPrimes(10000);
+
+Console.WriteLine(r);
