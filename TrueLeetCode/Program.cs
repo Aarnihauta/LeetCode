@@ -1,4 +1,5 @@
 using TrueLeetCode.Leetcode.BitManipulations;
 
-var l = new L1720();
-l.Decode(new int[] { 1, 2, 3 }, 1);
+var l = new L2433();
+
+l.FindArray(new int[] { 5, 2, 0, 3, 1 });
