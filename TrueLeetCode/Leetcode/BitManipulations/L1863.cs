@@ -5,12 +5,10 @@ public class L1863
 {
     public int SubsetXORSum(int[] nums)
     {
-        if (nums.Length == 0)
+        if (nums.Length == 0) 
         {
             return 0;
         }
-
-        var q = nums.Where((item, idx) => ((1 << idx) & 1) != 0);
 
         var items = Enumerable
             .Range(1, (1 << nums.Length) - 1)
