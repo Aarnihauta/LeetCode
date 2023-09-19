@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.CSC;
+﻿namespace TrueLeetCode.CSC.DataStructure;
 
 
 public class DynamicMultipicativeArray<T>
@@ -20,7 +20,7 @@ public class DynamicMultipicativeArray<T>
     {
         int index = Array.IndexOf(_array, item);
 
-        if(index > 0)
+        if (index > 0)
         {
             _array[index] = default;
             return true;
