@@ -1,4 +1,6 @@
 ﻿namespace TrueLeetCode.Leetcode.Trees;
+
+//https://leetcode.com/problems/evaluate-boolean-binary-tree/
 public class L2331
 {
     public bool EvaluateTree(TreeNode root)
