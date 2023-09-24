@@ -18,7 +18,10 @@ public class Graph<T>
     }
     public void AddEdge(Vertex<T> from, Vertex<T> to)
     {
-        _edges.Add(new Edge<T>(from, to));
+        if (!_edges.Any(x => x.From == from && x.To == to))
+        {
+            _edges.Add(new Edge<T>(from, to));
+        }
     }
 
     public int[,] GetMatrix()
@@ -50,18 +53,56 @@ public class Graph<T>
 
         return result;
     }
+
+    public void DepthTraversal(Vertex<T> start)
+    {
+        var startEdge = _edges.FirstOrDefault(x => x.From == start);
+        if (startEdge == null)
+        {
+            return;
+        }
+
+        var visited = new HashSet<Vertex<T>>();
+        var queue = new Queue<Edge<T>>();
+        queue.Enqueue(startEdge);
+        while (queue.Any())
+        {
+            var item = queue.Dequeue();
+            Console.WriteLine(item);
+            visited.Add(item.From);
+
+            var edges = GetEdges(item.From);
+
+            foreach (var edge in edges)
+            {
+                if (!visited.Contains(edge.From))
+                {
+                    queue.Enqueue(edge);
+                }
+            }
+        }
+    }
+
+    private List<Vertex<T>> GetAdjacentVertexList(Vertex<T> vertex)
+    {
+
+    }
 }
 
 public class Vertex<T>
 {
-    public int Number { get; }
-    public T Value { get; }
-    internal bool Visited { get; set; }
-
     public Vertex(T value, int number)
     {
         Value = value;
         Number = number;
+    }
+
+    public int Number { get; }
+    public T Value { get; }
+
+    public override string ToString()
+    {
+        return $"{Number}:{Value}";
     }
 }
 
@@ -77,4 +118,12 @@ public class Edge<T>
     public Vertex<T> From { get; }
     public Vertex<T> To { get; }
     public int Weight { get; }
+
+    public override string ToString()
+    {
+        return From.ToString() + "->" + To.ToString();
+    }
 }
+
+
+public class Int32Graph : Graph<int> { }

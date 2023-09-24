@@ -1,18 +1,25 @@
-using TrueLeetCode.Leetcode.Trees;
+using TrueLeetCode.CSC.DataStructure;
 
-var l = new L100();
+var g = new Int32Graph();
 
-var p = new TreeNode
-{
-    val = 1,
-    left = new(2)
-};
+var v0 = new Vertex<int>(0, 0);
+var v1 = new Vertex<int>(1, 1);
+var v2 = new Vertex<int>(2, 2);
+var v3 = new Vertex<int>(3, 3);
+var v4 = new Vertex<int>(4, 4);
+var v5 = new Vertex<int>(5, 5);
 
-var q = new TreeNode
-{
-    val = 1,
-    right = new(2)
-};
+g.AddVertex(v0);
+g.AddVertex(v1);
+g.AddVertex(v2);
+g.AddVertex(v3);
+g.AddVertex(v4);
+g.AddVertex(v5);
 
-var s = l.IsSameTree(p, q);
-Console.WriteLine(s);
+g.AddEdge(v0, v1);
+g.AddEdge(v0, v2);
+g.AddEdge(v1, v3);
+g.AddEdge(v1, v4);
+g.AddEdge(v4, v5);
+
+g.DepthTraversal(v0);
