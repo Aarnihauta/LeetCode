@@ -78,6 +78,31 @@ public class Graph<T>
             }
         }
     }
+
+    public void DepthTraversal(Vertex<T> start)
+    {
+        var visited = new HashSet<Vertex<T>>();
+        var stack = new Stack<Vertex<T>>();
+
+        stack.Push(start);
+
+        while(stack.Any())
+        {
+            var vertex = stack.Pop();
+            Console.WriteLine(vertex);
+            visited.Add(vertex);
+
+            var edges = _edges.Where(x => x.From == vertex);
+
+            foreach(var edge in edges)
+            {
+                if(!visited.Contains(edge.To))
+                {
+                    stack.Push(edge.To);
+                }
+            }
+        }
+    }
 }
 
 public class Vertex<T>

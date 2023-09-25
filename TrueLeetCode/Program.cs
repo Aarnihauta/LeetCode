@@ -16,10 +16,11 @@ g.AddVertex(v3);
 g.AddVertex(v4);
 g.AddVertex(v5);
 
-g.AddEdge(v0, v1);
-g.AddEdge(v0, v2);
-g.AddEdge(v1, v3);
-g.AddEdge(v1, v4);
+g.AddEdge(v4, v1);
+g.AddEdge(v4, v2);
+g.AddEdge(v4, v3);
 g.AddEdge(v4, v5);
 
-g.BreadthTraversal(v0);
+g.BreadthTraversal(v4);
+Console.WriteLine();
+g.DepthTraversal(v4);
