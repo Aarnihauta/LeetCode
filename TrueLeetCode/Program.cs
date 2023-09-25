@@ -22,4 +22,4 @@ g.AddEdge(v1, v3);
 g.AddEdge(v1, v4);
 g.AddEdge(v4, v5);
 
-g.DepthTraversal(v0);
+g.BreadthTraversal(v0);

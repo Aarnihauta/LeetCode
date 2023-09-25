@@ -54,38 +54,29 @@ public class Graph<T>
         return result;
     }
 
-    public void DepthTraversal(Vertex<T> start)
+    public void BreadthTraversal(Vertex<T> start)
     {
-        var startEdge = _edges.FirstOrDefault(x => x.From == start);
-        if (startEdge == null)
-        {
-            return;
-        }
-
         var visited = new HashSet<Vertex<T>>();
-        var queue = new Queue<Edge<T>>();
-        queue.Enqueue(startEdge);
+        var queue = new Queue<Vertex<T>>();
+
+        queue.Enqueue(start);
+
         while (queue.Any())
         {
-            var item = queue.Dequeue();
-            Console.WriteLine(item);
-            visited.Add(item.From);
+            var vertex = queue.Dequeue();
+            Console.WriteLine(vertex);
+            visited.Add(vertex);
 
-            var edges = GetEdges(item.From);
+            var edges = _edges.Where(x => x.From == vertex);
 
             foreach (var edge in edges)
             {
-                if (!visited.Contains(edge.From))
+                if (!visited.Contains(edge.To))
                 {
-                    queue.Enqueue(edge);
+                    queue.Enqueue(edge.To);
                 }
             }
         }
-    }
-
-    private List<Vertex<T>> GetAdjacentVertexList(Vertex<T> vertex)
-    {
-
     }
 }
 
@@ -103,6 +94,11 @@ public class Vertex<T>
     public override string ToString()
     {
         return $"{Number}:{Value}";
+    }
+
+    public override int GetHashCode()
+    {
+        return Number.GetHashCode() ^ Value.GetHashCode();
     }
 }
 
