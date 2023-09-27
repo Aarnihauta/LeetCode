@@ -28,12 +28,10 @@
 
 using TrueLeetCode.Leetcode.Graphs;
 
-L1791 l = new L1791();
-var q = l.FindCenter(new int[][]
+var l = new L997();
+
+l.FindJudge(3, new int[][]
 {
     new int[] {1,2},
     new int[] {2,3},
-    new int[] {4,2},
 });
-
-Console.WriteLine(q);
