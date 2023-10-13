@@ -1,8 +1,10 @@
-﻿namespace TrueLeetCode.CSC.DataStructure;
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace TrueLeetCode.CSC.DataStructure;
 public class Graph<T>
 {
-    private ICollection<Edge<T>> _edges;
-    private ICollection<Vertex<T>> _vertexes;
+    internal ICollection<Edge<T>> _edges;
+    internal ICollection<Vertex<T>> _vertexes;
 
     public int VertexCount => _vertexes.Count;
     public int EdgeCount => _edges.Count;
@@ -12,16 +14,57 @@ public class Graph<T>
         _edges = new List<Edge<T>>();
         _vertexes = new List<Vertex<T>>();
     }
+
     public void AddVertex(Vertex<T> vertex)
     {
         _vertexes.Add(vertex);
     }
-    public void AddEdge(Vertex<T> from, Vertex<T> to)
+
+    public void AddEdge(Vertex<T> from, Vertex<T> to, int weight = 1, bool undirect = false)
     {
         if (!_edges.Any(x => x.From == from && x.To == to))
         {
-            _edges.Add(new Edge<T>(from, to));
+            _edges.Add(new Edge<T>(from, to, weight));
+
+            if (undirect)
+            {
+                if (!_edges.Any(x => x.From == to && x.To == from))
+                {
+                    _edges.Add(new Edge<T>(to, from, weight));
+                }
+            }
         }
+    }
+
+    public void AddEdge(Edge<T> edge)
+    {
+        if (!_vertexes.Contains(edge.From))
+        {
+            _vertexes.Add(edge.From);
+        }
+        if (!_vertexes.Contains(edge.To))
+        {
+            _vertexes.Add(edge.To);
+        }
+        AddEdge(edge.From, edge.To, edge.Weight);
+    }
+
+    public void RemoveVertex(Vertex<T> vertex)
+    {
+        var edges = _edges.ToList();
+        foreach (var item in edges)
+        {
+            if (item.From == vertex || item.To == vertex)
+            {
+                _edges.Remove(item);
+            }
+        }
+        _vertexes.Remove(vertex);
+    }
+
+    public void RemoveEdge(Edge<T> edge)
+    {
+        _edges.Remove(edge);
     }
 
     public int[,] GetMatrix()
@@ -86,7 +129,7 @@ public class Graph<T>
 
         stack.Push(start);
 
-        while(stack.Any())
+        while (stack.Any())
         {
             var vertex = stack.Pop();
             Console.WriteLine(vertex);
@@ -94,14 +137,52 @@ public class Graph<T>
 
             var edges = _edges.Where(x => x.From == vertex);
 
-            foreach(var edge in edges)
+            foreach (var edge in edges)
             {
-                if(!visited.Contains(edge.To))
+                if (!visited.Contains(edge.To))
                 {
                     stack.Push(edge.To);
                 }
             }
         }
+    }
+
+    public Graph<T> GetMST()
+    {
+        Graph<T> result = new Graph<T>();
+
+        var edges = _edges.OrderBy(x => x.Weight);
+        var vertexes = _vertexes.ToList();
+        var trees = new Dictionary<Vertex<T>, HashSet<Vertex<T>>>();
+
+        foreach (var vertex in vertexes)
+        {
+            trees.Add(vertex, new HashSet<Vertex<T>> { vertex });
+        }
+
+        foreach (var edge in edges)
+        {
+            var from = trees[edge.From];
+            var to = trees[edge.To];
+
+            if(from != to)
+            {
+                result.AddEdge(edge);
+
+                foreach(var v in to)
+                {
+                    from.Add(v);
+                    trees[v] = from;
+                }
+            }
+        }
+
+        return result;
+    }
+
+    internal Vertex<T> GetNextMinimumVertex(Vertex<T> vertex, params Vertex<T>[] ignore)
+    {
+        return _edges.Where(x => x.From == vertex && !ignore.Contains(x.From)).OrderByDescending(x => x.Weight).FirstOrDefault()?.From;
     }
 }
 
@@ -127,7 +208,7 @@ public class Vertex<T>
     }
 }
 
-public class Edge<T>
+public class Edge<T> : IEqualityComparer<Edge<T>>
 {
     public Edge(Vertex<T> from, Vertex<T> to, int weight = 1)
     {
@@ -140,11 +221,23 @@ public class Edge<T>
     public Vertex<T> To { get; }
     public int Weight { get; }
 
+    public bool Equals(Edge<T>? x, Edge<T>? y)
+    {
+        if (ReferenceEquals(x, y))
+        {
+            return true;
+        }
+
+        return x.To == y.To && x.From == y.From && x.Weight == y.Weight;
+    }
+
+    public int GetHashCode([DisallowNull] Edge<T> obj)
+    {
+        return obj.GetHashCode();
+    }
+
     public override string ToString()
     {
         return From.ToString() + "->" + To.ToString();
     }
 }
-
-
-public class Int32Graph : Graph<int> { }
