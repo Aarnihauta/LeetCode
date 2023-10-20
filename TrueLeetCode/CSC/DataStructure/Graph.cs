@@ -147,39 +147,6 @@ public class Graph<T>
         }
     }
 
-    public Graph<T> GetMST()
-    {
-        Graph<T> result = new Graph<T>();
-
-        var edges = _edges.OrderBy(x => x.Weight);
-        var vertexes = _vertexes.ToList();
-        var trees = new Dictionary<Vertex<T>, HashSet<Vertex<T>>>();
-
-        foreach (var vertex in vertexes)
-        {
-            trees.Add(vertex, new HashSet<Vertex<T>> { vertex });
-        }
-
-        foreach (var edge in edges)
-        {
-            var from = trees[edge.From];
-            var to = trees[edge.To];
-
-            if(from != to)
-            {
-                result.AddEdge(edge);
-
-                foreach(var v in to)
-                {
-                    from.Add(v);
-                    trees[v] = from;
-                }
-            }
-        }
-
-        return result;
-    }
-
     internal Vertex<T> GetNextMinimumVertex(Vertex<T> vertex, params Vertex<T>[] ignore)
     {
         return _edges.Where(x => x.From == vertex && !ignore.Contains(x.From)).OrderByDescending(x => x.Weight).FirstOrDefault()?.From;
