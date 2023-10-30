@@ -1,6 +1,12 @@
 ﻿namespace TrueLeetCode.CSC.DataStructure;
 public class MST
 {
+    public List<Graph<T>> GetShortestPath<T>(Graph<T> source, Vertex<T> from, Vertex<T> to)
+    {
+        return null;
+    }
+
+
     public Graph<T> Kruskal<T>(Graph<T> source)
     {
         Graph<T> result = new Graph<T>();
