@@ -19,8 +19,7 @@ public static class BitCounting
         const uint c3 = 0x0F0F0F0Fu;
         const uint c4 = 0x00FF00FFu;
         const uint c5 = 0X0000FFFFu;
-        var f = Convert.ToString(n >>> 1, 2).PadLeft(32, '0');
-        var f1 = Convert.ToString(n, 2).PadLeft(32, '0');
+
         n = (n & c1) + ((n >>> 1) & (n & c1));
         n = (n & c2) + ((n >>> 2) & (n & c2));
         n = (n & c3) + ((n >>> 2) & (n & c3));
