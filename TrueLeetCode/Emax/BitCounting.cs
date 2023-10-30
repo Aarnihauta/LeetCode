@@ -28,9 +28,4 @@ public static class BitCounting
 
         return (int)n;
     }
-
-    public static int FastBitCounting2(int n)
-    {
-        return 0;
-    }
 }
