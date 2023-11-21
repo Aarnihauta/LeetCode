@@ -1,4 +1,6 @@
 ﻿namespace TrueLeetCode.Leetcode.Arrays;
+
+//https://leetcode.com/problems/create-target-array-in-the-given-order/
 public class L1389
 {
     public int[] CreateTargetArray(int[] nums, int[] index)
