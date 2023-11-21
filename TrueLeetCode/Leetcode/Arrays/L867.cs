@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TrueLeetCode.Leetcode.Arrays;
+﻿namespace TrueLeetCode.Leetcode.Arrays;
 public class L867
 {
     public int[][] Transpose(int[][] matrix)
