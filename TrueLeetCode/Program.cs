@@ -1,9 +1,27 @@
-using TrueLeetCode.CSC;
+using TrueLeetCode.Leetcode.Trees;
 
-int[][] matrix = new int[][]
+var l = new L111();
+
+var root = new TreeNode
 {
-    new int[] {1,2,3},
-    new int[] {4,5,6},
+    val  = 2,
+    right = new TreeNode
+    {
+        val = 3,
+        right = new TreeNode
+        {
+            val = 4,
+            right = new TreeNode
+            {
+                val = 5,
+                right = new TreeNode
+                {
+                    val = 6,
+                }
+            }
+        }
+    }
 };
 
-laba1.Transpose(matrix);
+var q= l.MinDepth(root);
+Console.WriteLine(q);
