@@ -1,4 +1,6 @@
 ﻿namespace TrueLeetCode.Leetcode.Trees;
+
+//https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/
 public class L671
 {
     public int FindSecondMinimumValue(TreeNode root)
