@@ -1,4 +1,6 @@
 ﻿namespace TrueLeetCode.Leetcode.Arrays;
+
+//https://leetcode.com/problems/transpose-matrix/
 public class L867
 {
     public int[][] Transpose(int[][] matrix)
