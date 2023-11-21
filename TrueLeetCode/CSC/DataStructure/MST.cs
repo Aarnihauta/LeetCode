@@ -17,7 +17,7 @@ public class MST
 
         foreach (var vertex in vertexes)
         {
-            trees.Add(vertex, new HashSet<Vertex<T>> { vertex });
+            trees.Add(vertex, new HashSet<Vertex<T>>{ vertex });
         }
 
         foreach (var edge in edges)
