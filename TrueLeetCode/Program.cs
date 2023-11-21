@@ -1,27 +1,26 @@
 using TrueLeetCode.Leetcode.Trees;
 
-var l = new L111();
+var l = new L671();
 
 var root = new TreeNode
 {
-    val  = 2,
+    val = 2,
+    left = new TreeNode
+    {
+        val = 2
+    },
     right = new TreeNode
     {
-        val = 3,
+        val = 5,
+        left = new TreeNode
+        {
+            val = 5
+        },
         right = new TreeNode
         {
-            val = 4,
-            right = new TreeNode
-            {
-                val = 5,
-                right = new TreeNode
-                {
-                    val = 6,
-                }
-            }
+            val = 7
         }
     }
 };
 
-var q= l.MinDepth(root);
-Console.WriteLine(q);
+l.FindSecondMinimumValue(root);
