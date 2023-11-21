@@ -1,4 +1,6 @@
 ﻿namespace TrueLeetCode.Leetcode.Trees;
+
+//https://leetcode.com/problems/minimum-depth-of-binary-tree/
 public class L111
 {
     public int MinDepth(TreeNode root, int depth)
