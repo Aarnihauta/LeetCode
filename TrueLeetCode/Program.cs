@@ -1,33 +1,13 @@
-using TrueLeetCode.Leetcode.Trees;
+using TrueLeetCode.Leetcode.Arrays;
 
+var l = new L1672();
 
-var root = new TreeNode
+var matrix = new int[][]
 {
-    val = 4,
-    left = new TreeNode
-    {
-        val = 8,
-        left = new TreeNode
-        {
-            val = 0
-        },
-        right = new TreeNode
-        {
-            val = 1
-        }
-    },
-    right = new TreeNode
-    {
-        val = 5,
-        right = new TreeNode
-        {
-            val = 6
-        }
-    }
+    new int[] { 2, 8, 7 },
+    new int[] { 7, 1, 3 },
+    new int[] { 1, 9, 5 },
 };
 
-var l = new L2265();
-
-var q = l.AverageOfSubtree(root);
-
+var q =  l.MaximumWealth(matrix);
 Console.WriteLine(q);
