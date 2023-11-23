@@ -1,15 +1,12 @@
 using TrueLeetCode.Leetcode.Arrays;
 
-var l = new L2373();
+var l = new L832();
 
 var matrix = new int[][]
 {
-    new int[] { 1,1,1,1,1 },
-    new int[] { 1,1,1,1,1 },
-    new int[] { 1,1,2,1,1 },
-    new int[] { 1,1,1,1,1 },
-    new int[] { 1,1,1,1,1 },
+    new int[] {1,1,0},
+    new int[] {1,0,1},
+    new int[] {0,0,0},
 };
 
-var q =  l.LargestLocal(matrix);
-Console.WriteLine(q);
+l.FlipAndInvertImage(matrix);
