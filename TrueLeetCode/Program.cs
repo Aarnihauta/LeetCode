@@ -1,12 +1,9 @@
 using TrueLeetCode.Leetcode.Arrays;
 
-var l = new L832();
+var q = new L1630();
 
-var matrix = new int[][]
-{
-    new int[] {1,1,0},
-    new int[] {1,0,1},
-    new int[] {0,0,0},
-};
+var nums = new int[] { 4, 6, 5, 9, 3, 7 };
+var l = new int[] { 0, 0, 2 };
+var r = new int[] { 2, 3, 5 };
 
-l.FlipAndInvertImage(matrix);
+q.CheckArithmeticSubarrays(nums, l, r);
