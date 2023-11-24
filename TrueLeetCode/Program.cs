@@ -1,11 +1,12 @@
 using TrueLeetCode.Leetcode.Arrays;
 
-var l = new L2500();
+var l = new L2643();
 
 var matrix = new int[][]
 {
-    new int[] {1,2,4},
-    new int[] {3,3,1},
+    new int[] {0,0,0},
+    new int[] {0,1,0},
+    new int[] {0,1,1},
 };
 
-l.DeleteGreatestValue(matrix);
+l.RowAndMaximumOnes(matrix);
