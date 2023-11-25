@@ -1,7 +1,7 @@
 ﻿namespace TrueLeetCode.CSC.Collection;
 public class CollectionOperators
 {
-    //A\B := {x ∈ M | (x ∈ A)∧(x ∈/ B)}
+    //A\B := {x ∈ M | (x ∈ A)∧(x ∉ B)}
     public IEnumerable<T> Diff<T>(IEnumerable<T> first, IEnumerable<T> second)
     {
         foreach (var item in first)
