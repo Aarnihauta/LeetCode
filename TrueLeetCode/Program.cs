@@ -1,12 +1,7 @@
-using TrueLeetCode.Leetcode.Arrays;
+using TrueLeetCode.Leetcode.Queue;
 
-var l = new L2643();
+var l = new L1464();
 
-var matrix = new int[][]
-{
-    new int[] {0,0,0},
-    new int[] {0,1,0},
-    new int[] {0,1,1},
-};
+var arr = new int[] { 3, 4, 5, 2 };
 
-l.RowAndMaximumOnes(matrix);
+l.MaxProduct(arr);
