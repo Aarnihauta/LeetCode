@@ -1,7 +1,7 @@
-using TrueLeetCode.Leetcode.Queue;
+using TrueLeetCode.Leetcode.Arrays;
 
-var l = new L1464();
+var l = new L495();
 
-var arr = new int[] { 3, 4, 5, 2 };
-
-l.MaxProduct(arr);
+var times = new int[] { 1, 2,3,4,5 };
+int duration = 5;
+l.FindPoisonedDuration(times, duration);
