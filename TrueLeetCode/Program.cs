@@ -1,7 +1,16 @@
-using TrueLeetCode.Leetcode.Arrays;
+using TrueLeetCode.CSC.DataStructure;
 
-var l = new L495();
+int[][] arr = new int[][]
+{
+    new int[] {1,2,3},
+    new int[] {1,2,3},
+};
 
-var times = new int[] { 1, 2,3,4,5 };
-int duration = 5;
-l.FindPoisonedDuration(times, duration);
+int[][] arr2 = new int[][]
+{
+    new int[] {1,2},
+    new int[] {1,2},
+    new int[] {1,2},
+};
+
+Matrix2.Multiply(arr, arr2);

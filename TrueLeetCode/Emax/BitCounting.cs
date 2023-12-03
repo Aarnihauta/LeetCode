@@ -28,4 +28,28 @@ public static class BitCounting
 
         return (int)n;
     }
+
+    public static int HammingDistance(string x, string y)
+    {
+        if (x.Length != y.Length)
+        {
+            throw new ArgumentException();
+        }
+
+        if (x == y)
+        {
+            return 0;
+        }
+
+        int d = 0;
+        for (int i = 0; i < x.Length; i++)
+        {
+            if (x[i] != y[i])
+            {
+                d++;
+            }
+        }
+
+        return d;
+    }
 }
