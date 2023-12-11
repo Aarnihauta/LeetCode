@@ -3,7 +3,6 @@ public class Matrix2
 {
     public static void Rotate(int[][] matrix, int angle)
     {
-
     }
 
     public static int[][] Multiply(int[][] a, int[][] b)
