@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.CSC.DataStructure;
+﻿namespace TrueLeetCode.Advanced.DataStructure.Math;
 public class Matrix2
 {
     public static void Rotate(int[][] matrix, int angle)

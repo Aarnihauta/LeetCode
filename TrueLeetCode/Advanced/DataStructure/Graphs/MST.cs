@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.CSC.DataStructure;
+﻿namespace TrueLeetCode.Advanced.DataStructure.Graphs;
 public class MST
 {
     public List<Graph<T>> GetShortestPath<T>(Graph<T> source, Vertex<T> from, Vertex<T> to)
@@ -17,7 +17,7 @@ public class MST
 
         foreach (var vertex in vertexes)
         {
-            trees.Add(vertex, new HashSet<Vertex<T>>{ vertex });
+            trees.Add(vertex, new HashSet<Vertex<T>> { vertex });
         }
 
         foreach (var edge in edges)

@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.CSC.Collection;
+﻿namespace TrueLeetCode.Advanced.DataStructure.Collections;
 public class CollectionOperators
 {
     //A\B := {x ∈ M | (x ∈ A)∧(x ∉ B)}
@@ -32,7 +32,7 @@ public class CollectionOperators
     {
         foreach (var item in first)
         {
-            if(second.Contains(item))
+            if (second.Contains(item))
             {
                 yield return item;
             }
