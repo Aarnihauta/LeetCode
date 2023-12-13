@@ -20,20 +20,59 @@ public class SinglyLinkedList
     public void InsertLast(int value)
     {
         Tail.Next = new SinglyLinkedListNode(value);
+        Tail = Tail.Next;
     }
 
     public void Insert(SinglyLinkedListNode node, int value)
     {
+        var parent = FindParent(node.Value);
 
+        if (parent != null)
+        {
+            if(parent.Next == null)
+            {
+                parent.Next.Next = new SinglyLinkedListNode(value);
+            }
+            else
+            {
+                var temp = parent.Next.Next;
+                parent.Next.Next = new SinglyLinkedListNode(value);
+                parent.Next.Next.Next = temp;
+            }
+        }
     }
 
     //O(n)
     public void Remove(SinglyLinkedListNode node)
     {
-        if(node == Head)
+        if (node == Head)
         {
             Head = Head.Next;
         }
+    }
+
+    public SinglyLinkedListNode Find(int value)
+    {
+        var head = Head;
+
+        while (head != null && head != Tail && head.Value != value)
+        {
+            head = head.Next;
+        }
+
+        return head;
+    }
+
+    public SinglyLinkedListNode FindParent(int value)
+    {
+        var head = Head;
+
+        while (head != null && head != Tail && head.Next.Value != value)
+        {
+            head = head.Next;
+        }
+
+        return head;
     }
 
     //O(n)
