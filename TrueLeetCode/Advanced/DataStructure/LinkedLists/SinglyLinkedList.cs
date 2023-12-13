@@ -51,6 +51,7 @@ public class SinglyLinkedList
         }
     }
 
+    //O(n)
     public SinglyLinkedListNode Find(int value)
     {
         var head = Head;
@@ -63,6 +64,7 @@ public class SinglyLinkedList
         return head;
     }
 
+    //O(n)
     public SinglyLinkedListNode FindParent(int value)
     {
         var head = Head;
