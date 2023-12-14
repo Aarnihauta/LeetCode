@@ -23,9 +23,10 @@ public class SinglyLinkedList
         Tail = Tail.Next;
     }
 
-    public void Insert(SinglyLinkedListNode node, int value)
+    //O(1)
+    public void Insert(SinglyLinkedListNode insertionNode, int value)
     {
-        var parent = FindParent(node.Value);
+        var parent = FindParent(insertionNode);
 
         if (parent != null)
         {
@@ -39,6 +40,12 @@ public class SinglyLinkedList
                 parent.Next.Next = new SinglyLinkedListNode(value);
                 parent.Next.Next.Next = temp;
             }
+        }
+        else
+        {
+            var node = new SinglyLinkedListNode(value);
+            node.Next = Head;
+            Head = node;
         }
     }
 
@@ -82,6 +89,11 @@ public class SinglyLinkedList
     public SinglyLinkedListNode FindParent(int value)
     {
         var head = Head;
+
+        if(Head.Value == value)
+        {
+            return null;
+        }
 
         while (head != null && head != Tail && head.Next.Value != value)
         {
