@@ -29,7 +29,7 @@ public class SinglyLinkedList
 
         if (parent != null)
         {
-            if(parent.Next == null)
+            if (parent.Next == null)
             {
                 parent.Next.Next = new SinglyLinkedListNode(value);
             }
@@ -48,6 +48,20 @@ public class SinglyLinkedList
         if (node == Head)
         {
             Head = Head.Next;
+            return;
+        }
+
+        var head = Head;
+
+        while(head?.Next != node)
+        {
+            head = head.Next;
+        }
+
+        if(head != null)
+        {
+            var temp = head.Next.Next;
+            head.Next = temp;
         }
     }
 
