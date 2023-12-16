@@ -1,111 +1,117 @@
 ﻿using System.Text;
 
 namespace TrueLeetCode.Advanced.DataStructure.LinkedLists;
-public class SinglyLinkedList
+public class SinglyLinkedList<T>
 {
-    public SinglyLinkedList(SinglyLinkedListNode head)
+    public SinglyLinkedList(T value)
     {
-        Head = head;
-        Tail = head;
+        Head = new SinglyLinkedListNode<T>(value);
     }
 
-    public SinglyLinkedList(int value) : this(new SinglyLinkedListNode(value))
-    {
-
-    }
-    public SinglyLinkedListNode Head { get; private set; }
-    public SinglyLinkedListNode Tail { get; private set; }
+    public SinglyLinkedListNode<T> Head { get; private set; }
 
     //O(1)
-    public void InsertLast(int value)
+    public void InsertFirst(T value)
     {
-        Tail.Next = new SinglyLinkedListNode(value);
-        Tail = Tail.Next;
+        var node = new SinglyLinkedListNode<T>(value);
+
+        node.Next = Head;
+        Head = node;
     }
 
-    //O(1)
-    public void Insert(SinglyLinkedListNode insertionNode, int value)
+    //O(n)
+    public void InsertLast(T value)
     {
-        var parent = FindParent(insertionNode);
+        var node = new SinglyLinkedListNode<T>(value);
 
-        if (parent != null)
+        if (Head == null)
         {
-            if (parent.Next == null)
-            {
-                parent.Next.Next = new SinglyLinkedListNode(value);
-            }
-            else
-            {
-                var temp = parent.Next.Next;
-                parent.Next.Next = new SinglyLinkedListNode(value);
-                parent.Next.Next.Next = temp;
-            }
+            Head = node;
         }
         else
         {
-            var node = new SinglyLinkedListNode(value);
-            node.Next = Head;
-            Head = node;
+            var current = Head;
+
+            while (current.Next != null)
+            {
+                current = current.Next;
+            }
+
+            current.Next = node;
         }
     }
 
-    //O(n)
-    public void Remove(SinglyLinkedListNode node)
+    //O(1)
+    public void DeleteFirst()
     {
-        if (node == Head)
+        if (Head == null)
         {
-            Head = Head.Next;
             return;
         }
 
-        var head = Head;
-
-        while(head?.Next != node)
-        {
-            head = head.Next;
-        }
-
-        if(head != null)
-        {
-            var temp = head.Next.Next;
-            head.Next = temp;
-        }
+        Head = Head.Next;
     }
 
     //O(n)
-    public SinglyLinkedListNode Find(int value)
+    public void DeleteLast()
     {
-        var head = Head;
-
-        while (head != null && head != Tail && head.Value != value)
+        if (Head == null)
         {
-            head = head.Next;
+            return;
         }
 
-        return head;
+        var current = Head;
+
+        while (current.Next.Next != null)
+        {
+            current = current.Next;
+        }
+        current.Next = null;
     }
 
     //O(n)
-    public SinglyLinkedListNode FindParent(int value)
+    public void Delete(T element)
     {
-        var head = Head;
-
-        if(Head.Value == value)
+        if (Head == null)
         {
-            return null;
+            return;
         }
 
-        while (head != null && head != Tail && head.Next.Value != value)
+        var current = Head;
+        var prev = current;
+        while (current != null && !current.Value.Equals(element))
         {
-            head = head.Next;
+            prev = current;
+            current = current.Next;
         }
 
-        return head;
+        if (current == Head)
+        {
+            DeleteFirst();
+        }
+        else if (current != null)
+        {
+            prev.Next = current.Next;
+        }
+    }
+
+    //O(1)
+    public bool IsEmpty => Head == null;
+
+    //O(1)
+    public void Clear()
+    {
+        Head = null;
     }
 
     //O(n)
     public void Draw()
     {
+        if (Head == null)
+        {
+            return;
+        }
+
         var curr = Head;
         StringBuilder sb = new StringBuilder();
         while (curr != null)
@@ -119,14 +125,14 @@ public class SinglyLinkedList
     }
 }
 
-public class SinglyLinkedListNode
+public class SinglyLinkedListNode<T>
 {
-    public SinglyLinkedListNode(int value, SinglyLinkedListNode next = default)
+    public SinglyLinkedListNode(T value, SinglyLinkedListNode<T> next = default)
     {
         Value = value;
         Next = next;
     }
 
-    public int Value { get; set; }
-    public SinglyLinkedListNode Next { get; set; }
+    public T Value { get; set; }
+    public SinglyLinkedListNode<T> Next { get; set; }
 }
