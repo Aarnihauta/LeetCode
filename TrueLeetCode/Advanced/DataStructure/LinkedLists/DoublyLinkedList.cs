@@ -60,6 +60,28 @@ public class DoublyLinkedList<T>
         current.Next = null;
     }
 
+    public void Delete(T value)
+    {
+        var current = Head;
+
+        while(current.Next != null && !current.Value.Equals(value))
+        {
+            current = current.Next;
+        }
+        if(current == Head)
+        {
+            DeleteFirst();
+        }
+        else
+        {
+            current.Previous.Next = current.Next;
+            if(current.Next != null)
+            {
+                current.Next.Previous = current.Previous;
+            }
+        }
+    }
+
     public void Draw()
     {
         if (Head == null)
@@ -116,4 +138,9 @@ public class DoublyLinkedListNode<T>
 
     public DoublyLinkedListNode<T> Previous { get; set; }
     public DoublyLinkedListNode<T> Next { get; set; }
+
+    public override string ToString()
+    {
+        return Value.ToString();
+    }
 }
