@@ -1,11 +1,5 @@
-using TrueLeetCode.Advanced.DataStructure.LinkedLists;
+using TrueLeetCode.Advanced.DataStructure.Math.Combinatorics;
 
-var list = new DoublyLinkedList<int>();
+var list = new List<int> { 1, 2, 3 };
 
-list.InsertFirst(0);
-list.InsertLast(1);
-list.InsertLast(2);
-list.InsertLast(3);
-
-list.Delete(3);
-list.Draw();
+Subset.Find(list);

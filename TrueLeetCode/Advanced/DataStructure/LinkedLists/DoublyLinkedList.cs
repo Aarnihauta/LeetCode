@@ -82,6 +82,8 @@ public class DoublyLinkedList<T>
         }
     }
 
+    public bool IsEmpy() => Head == null;
+
     public void Draw()
     {
         if (Head == null)
