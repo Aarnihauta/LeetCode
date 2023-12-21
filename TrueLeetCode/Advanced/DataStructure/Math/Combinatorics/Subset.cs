@@ -26,8 +26,8 @@ public static class Subset
 
             FindRecurse(input, j + 1, prefix, prefixIndices, result);
 
-            prefix.RemoveAt(prefix.Count - 1);
             prefixIndices.Remove(j);
+            prefix.RemoveAt(prefix.Count - 1);
         }
     }
 }
