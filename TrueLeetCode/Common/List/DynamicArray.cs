@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.Advanced.DataStructure.Collections;
+﻿namespace TrueLeetCode.DataStructure.List;
 
 
 public class DynamicMultipicativeArray<T>

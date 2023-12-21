@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.Advanced.DataStructure.Math.Combinatorics;
+﻿namespace TrueLeetCode.DataStructure.Math.Combinatorics;
 public static class Subset
 {
     public static List<List<T>> Find<T>(List<T> input)
@@ -16,7 +16,7 @@ public static class Subset
 
         for (int j = k; j < input.Count; j++)
         {
-            if(prefixIndices.Contains(j))
+            if (prefixIndices.Contains(j))
             {
                 continue;
             }

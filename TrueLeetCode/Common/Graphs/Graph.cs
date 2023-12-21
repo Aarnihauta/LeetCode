@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace TrueLeetCode.Advanced.DataStructure.Graphs;
+namespace TrueLeetCode.DataStructure.Graphs;
 public class Graph<T>
 {
     internal ICollection<Edge<T>> _edges;

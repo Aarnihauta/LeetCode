@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.Advanced.DataStructure.Trees;
+﻿namespace TrueLeetCode.DataStructure.Trees;
 public class BinaryHeap
 {
     private List<int> _items = new List<int>();

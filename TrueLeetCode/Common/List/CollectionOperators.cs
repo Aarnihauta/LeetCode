@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.Advanced.DataStructure.Collections;
+﻿namespace TrueLeetCode.DataStructure.List;
 public class CollectionOperators
 {
     //A\B := {x ∈ M | (x ∈ A)∧(x ∉ B)}

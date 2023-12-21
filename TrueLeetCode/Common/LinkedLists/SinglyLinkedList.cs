@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace TrueLeetCode.Advanced.DataStructure.LinkedLists;
+namespace TrueLeetCode.DataStructure.LinkedLists;
 public class SinglyLinkedList<T>
 {
     public SinglyLinkedList(T value)

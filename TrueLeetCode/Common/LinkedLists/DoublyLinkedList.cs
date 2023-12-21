@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace TrueLeetCode.Advanced.DataStructure.LinkedLists;
+namespace TrueLeetCode.DataStructure.LinkedLists;
 public class DoublyLinkedList<T>
 {
     public DoublyLinkedListNode<T> Head { get; set; }
@@ -64,18 +64,18 @@ public class DoublyLinkedList<T>
     {
         var current = Head;
 
-        while(current.Next != null && !current.Value.Equals(value))
+        while (current.Next != null && !current.Value.Equals(value))
         {
             current = current.Next;
         }
-        if(current == Head)
+        if (current == Head)
         {
             DeleteFirst();
         }
         else
         {
             current.Previous.Next = current.Next;
-            if(current.Next != null)
+            if (current.Next != null)
             {
                 current.Next.Previous = current.Previous;
             }

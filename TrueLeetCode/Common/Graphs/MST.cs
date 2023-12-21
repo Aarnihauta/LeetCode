@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.Advanced.DataStructure.Graphs;
+﻿namespace TrueLeetCode.DataStructure.Graphs;
 public class MST
 {
     public List<Graph<T>> GetShortestPath<T>(Graph<T> source, Vertex<T> from, Vertex<T> to)
