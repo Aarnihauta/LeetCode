@@ -5,6 +5,11 @@ public class L2160
 {
     public int MinimumSum(int num)
     {
-        return 1;
+        return 0;
+    }
+
+    private void Sum(string num, int k, List<string> prefix, HashSet<int> visited, List<List<string>> result)
+    {
+            
     }
 }
