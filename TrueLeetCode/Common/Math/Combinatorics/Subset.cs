@@ -14,20 +14,20 @@ public static class Subset
     {
         result.Add(new List<T>(prefix));
 
-        for (int j = k; j < input.Count; j++)
+        for (int i = k; i < input.Count; i++)
         {
-            if (prefixIndices.Contains(j))
+            if(prefixIndices.Contains(i))
             {
                 continue;
             }
 
-            prefix.Add(input[j]);
-            prefixIndices.Add(j);
+            prefix.Add(input[i]);
+            prefixIndices.Add(i);
 
-            FindRecurse(input, j + 1, prefix, prefixIndices, result);
+            FindRecurse(input, i + 1, prefix, prefixIndices, result);
 
-            prefixIndices.Remove(j);
             prefix.RemoveAt(prefix.Count - 1);
+            prefixIndices.Remove(i);
         }
     }
 }
