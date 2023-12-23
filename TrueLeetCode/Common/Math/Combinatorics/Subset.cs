@@ -1,16 +1,16 @@
-﻿namespace TrueLeetCode.DataStructure.Math.Combinatorics;
+﻿namespace TrueLeetCode.Common.Math.Combinatorics;
 public static class Subset
 {
     public static List<List<T>> Find<T>(List<T> input)
     {
         var result = new List<List<T>>();
 
-        FindRecurse(input, 0, new List<T>(), new HashSet<int>(), result);
+        Recurse(input, 0, new List<T>(), new HashSet<int>(), result);
 
         return result;
     }
 
-    private static void FindRecurse<T>(List<T> input, int k, List<T> prefix, HashSet<int> prefixIndices, List<List<T>> result)
+    private static void Recurse<T>(List<T> input, int k, List<T> prefix, HashSet<int> prefixIndices, List<List<T>> result)
     {
         result.Add(new List<T>(prefix));
 
@@ -24,7 +24,7 @@ public static class Subset
             prefix.Add(input[i]);
             prefixIndices.Add(i);
 
-            FindRecurse(input, i + 1, prefix, prefixIndices, result);
+            Recurse(input, i + 1, prefix, prefixIndices, result);
 
             prefix.RemoveAt(prefix.Count - 1);
             prefixIndices.Remove(i);

@@ -1,5 +1,6 @@
-using TrueLeetCode.Common.Math.Combinatorics;
+using TrueLeetCode.Leetcode.HashTable;
 
-var q = Combination.Find(new List<string> { "1", "2", "3", "4"}, 3, true);
+var l = new L1496();
 
-Console.WriteLine(q);
+bool res = l.IsPathCrossing("NESWW");
+Console.WriteLine(res);
