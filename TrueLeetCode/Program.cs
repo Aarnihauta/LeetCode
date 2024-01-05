@@ -1,7 +1,12 @@
-using TrueLeetCode.Leetcode.Combinatorics;
+using TrueLeetCode.DataStructure.Math;
 
-var l = new L2221();
+int[][] matrix = new int[][]
+{
+    new int[] {1,2, 3},
+    new int[] {4,5,6},
+    new int[] {7,8,9},
+};
 
-var arr = new int[] { 1, 2, 3, 4, 5 };
+matrix = Matrix2.Transpose(matrix);
 
-l.TriangularSum(arr);
+Matrix2.Display(matrix);

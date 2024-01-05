@@ -1,8 +1,21 @@
 ﻿namespace TrueLeetCode.DataStructure.Math;
 public class Matrix2
 {
-    public static void Rotate(int[][] matrix, int angle)
+    public static int[][] Transpose(int[][] matrix)
     {
+        var result = new int[matrix[0].Length][];
+
+        for (int i = 0; i < matrix[0].Length; i++)
+        {
+            result[i] = new int[matrix.Length];
+
+            for (int j = 0; j < matrix.Length; j++)
+            {
+                result[i][j] = matrix[j][i];
+            }
+        }
+
+        return result;
     }
 
     public static int[][] Multiply(int[][] a, int[][] b)
@@ -29,5 +42,17 @@ public class Matrix2
             }
         }
         return result;
+    }
+
+    public static void Display(int[][] matrix)
+    {
+        for (int i = 0; i < matrix.Length; i++)
+        {
+            for (int j = 0; j < matrix[i].Length; j++)
+            {
+                Console.Write($"{matrix[i][j]} ");
+            }
+            Console.WriteLine();
+        }
     }
 }
