@@ -2,11 +2,11 @@ using TrueLeetCode.DataStructure.Math;
 
 int[][] matrix = new int[][]
 {
-    new int[] {1,2, 3},
-    new int[] {4,5,6},
-    new int[] {7,8,9},
+    new int[] {1,1,1},
+    new int[] {1,1,1},
+    new int[] {1,1,1}
 };
 
-matrix = Matrix2.Transpose(matrix);
+Matrix2.Multiply(matrix, 2);
 
 Matrix2.Display(matrix);

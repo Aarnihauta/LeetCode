@@ -44,6 +44,17 @@ public class Matrix2
         return result;
     }
 
+    public static void Multiply(int[][] matrix, int n)
+    {
+        for (int i = 0; i < matrix.Length; i++)
+        {
+            for (int j = 0; j < matrix[0].Length; j++)
+            {
+                matrix[i][j] *= n;
+            }
+        }
+    }
+
     public static void Display(int[][] matrix)
     {
         for (int i = 0; i < matrix.Length; i++)
