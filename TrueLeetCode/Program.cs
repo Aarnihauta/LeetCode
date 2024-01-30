@@ -1,12 +1,5 @@
-using TrueLeetCode.DataStructure.Math;
+using TrueLeetCode.Leetcode.DP;
 
-int[][] matrix = new int[][]
-{
-    new int[] {1,1,1},
-    new int[] {1,1,1},
-    new int[] {1,1,1}
-};
+var l = new L647();
 
-Matrix2.Multiply(matrix, 2);
-
-Matrix2.Display(matrix);
+l.CountSubstrings("aaa");
