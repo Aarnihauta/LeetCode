@@ -1,5 +1,7 @@
-using TrueLeetCode.Leetcode.DP;
 
-var l = new L647();
 
-l.CountSubstrings("aaa");
+using TrueLeetCode.Chars;
+
+var str = ImageToAscii.AsAscii(new System.Drawing.Bitmap("C:\\Users\\Nikita\\Downloads\\Telegram Desktop\\qqq.jpg"));
+
+Console.WriteLine(str);
