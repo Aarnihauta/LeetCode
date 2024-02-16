@@ -1,22 +1,19 @@
-using TrueLeetCode.Common.List.SetTheory;
+using TrueLeetCode.Leetcode.Arrays;
 
-UnionFind f = new UnionFind();
+var l = new L695();
 
-f.Make(1);
-f.Make(2);
-f.Make(3);
-f.Make(4);
-f.Make(5);
+var arr = new int[][]
+{
+    new int[] { 0,0,1,0,0,0,0,1,0,0,0,0,0},
+    new int[] { 0,0,0,0,0,0,0,1,1,1,0,0,0},
+    new int[] { 0,1,1,0,1,0,0,0,0,0,0,0,0},
+    new int[] { 0,1,0,0,1,1,0,0,1,0,1,0,0},
+    new int[] { 0,1,0,0,1,1,0,0,1,1,1,0,0},
+    new int[] { 0,0,0,0,0,0,0,0,0,0,1,0,0},
+    new int[] { 0,0,0,0,0,0,0,1,1,1,0,0,0},
+    new int[] { 0,0,0,0,0,0,0,1,1,0,0,0,0}
+};
 
-Console.WriteLine(f.Find(4));
 
-f.Unite(1, 4);
-
-Console.WriteLine(f.Find(4));
-Console.WriteLine(f.Find(1));
-f.Unite(3, 5);
-Console.WriteLine(f.Find(2));
-
-f.Unite(5, 2);
-Console.WriteLine(f.Find(5));
-Console.WriteLine(f.Find(3));
+var q = l.MaxAreaOfIsland(arr);
+Console.WriteLine(q);
