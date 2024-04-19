@@ -1,19 +1,16 @@
-using TrueLeetCode.Leetcode.Arrays;
+using TrueLeetCode.Leetcode.Trees;
 
-var l = new L695();
-
-var arr = new int[][]
+var root = new TreeNode
 {
-    new int[] { 0,0,1,0,0,0,0,1,0,0,0,0,0},
-    new int[] { 0,0,0,0,0,0,0,1,1,1,0,0,0},
-    new int[] { 0,1,1,0,1,0,0,0,0,0,0,0,0},
-    new int[] { 0,1,0,0,1,1,0,0,1,0,1,0,0},
-    new int[] { 0,1,0,0,1,1,0,0,1,1,1,0,0},
-    new int[] { 0,0,0,0,0,0,0,0,0,0,1,0,0},
-    new int[] { 0,0,0,0,0,0,0,1,1,1,0,0,0},
-    new int[] { 0,0,0,0,0,0,0,1,1,0,0,0,0}
+    val = 1,
+    left = new TreeNode(2)
+    {
+        left = new TreeNode(4),
+        right = new TreeNode(5)
+    },
+    right = new TreeNode(3)
 };
 
-
-var q = l.MaxAreaOfIsland(arr);
+var l = new L102();
+var q = l.LevelOrder(root);
 Console.WriteLine(q);
