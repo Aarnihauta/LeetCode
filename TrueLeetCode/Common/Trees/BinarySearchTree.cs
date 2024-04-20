@@ -87,6 +87,42 @@ public static class BinarySearchTree
 
         return successor;
     }
+
+    public static BinaryTreeNode Insert(BinaryTreeNode x, int z)
+    {
+        if(x == null)
+        {
+            return new BinaryTreeNode(z);
+        }
+        else if(z < x.Value)
+        {
+            x.Left = Insert(x.Left, z);
+        }
+        else if(z > x.Value)
+        {
+            x.Right = Insert(x.Right, z);
+        }
+
+        return x;
+    }
+
+    public static bool IsBST(BinaryTreeNode root)
+    {
+        bool IsBST(BinaryTreeNode root, int min, int max)
+        {
+            if(root == null)
+            {
+                return true;
+            }
+            if(root.Value <= min || root.Value >= max)
+            {
+                return false;
+            }
+            return IsBST(root.Left, min, root.Value) && IsBST(root.Right, root.Value, max);
+        }
+
+        return IsBST(root, int.MinValue, int.MaxValue);
+    }
 }
 
 public class BinaryTreeNode
