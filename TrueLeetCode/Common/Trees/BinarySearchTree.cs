@@ -48,23 +48,44 @@ public static class BinarySearchTree
         }
     }
 
-    public static int Min(BinaryTreeNode root)
+    public static BinaryTreeNode Min(BinaryTreeNode root)
     {
         if(root.Left == null)
         {
-            return root.Value;
+            return root;
         }
         return Min(root.Left);
     }
 
-    public static int Max(BinaryTreeNode root)
+    public static BinaryTreeNode Max(BinaryTreeNode root)
     {
         if(root.Right == null)
         {
-            return root.Value;
+            return root;
         }
 
         return Max(root.Right);
+    }
+
+    public static BinaryTreeNode Parent(BinaryTreeNode root, int value)
+    {
+        var current = root;
+        var successor = current;
+
+        while(current != null)
+        {
+            if(current.Value > value)
+            {
+                successor = current;
+                current = current.Left;
+            }
+            else
+            {
+                current = current.Right;
+            }
+        }
+
+        return successor;
     }
 }
 
