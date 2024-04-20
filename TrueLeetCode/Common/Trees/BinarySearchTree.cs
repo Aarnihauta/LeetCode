@@ -88,7 +88,6 @@ public class BinaryTreeNode
         Right = new BinaryTreeNode(right);
     }
 
-
     public override string ToString()
     {
         return Value.ToString();
