@@ -12,6 +12,13 @@ public class TreeNode
         this.right = right;
     }
 
+    public TreeNode(int val, int val2, int val3)
+    {
+        this.val = val;
+        left = new TreeNode(val2);
+        right = new TreeNode(val3);
+    }
+
     public override string ToString()
     {
         return val.ToString();

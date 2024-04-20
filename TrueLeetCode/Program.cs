@@ -1,16 +1,13 @@
 using TrueLeetCode.Leetcode.Trees;
 
+var l = new L98();
+
 var root = new TreeNode
 {
-    val = 1,
-    left = new TreeNode(2)
-    {
-        left = new TreeNode(4),
-        right = new TreeNode(5)
-    },
-    right = new TreeNode(3)
+    val = 5,
+    left = new TreeNode(4),
+    right = new TreeNode(6, 3, 7)
 };
 
-var l = new L102();
-var q = l.LevelOrder(root);
-Console.WriteLine(q);
+bool valid = l.IsValidBST(root);
+Console.WriteLine(valid);
