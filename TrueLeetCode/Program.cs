@@ -1,18 +1,14 @@
 using TrueLeetCode.Leetcode.Trees;
 
-var l = new Codec();
+var l = new L124();
 
 var root = new TreeNode
 {
-    val = 1,
-    left = new TreeNode(2),
-    right = new TreeNode(3, 4, 5)
+    val = -10,
+    left = new TreeNode(9),
+    right = new TreeNode(20, 15, 7)
 };
 
-string str = l.serialize(root);
+var r2 = new TreeNode(1, -2, 3);
 
-var tree = l.deserialize(str);
-
-TreeNode.InorderTraversal(root);
-Console.WriteLine();
-TreeNode.InorderTraversal(tree);
+l.MaxPathSum(root);

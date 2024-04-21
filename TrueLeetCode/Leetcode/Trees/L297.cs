@@ -57,7 +57,7 @@ public class Codec
         root = deserialize(arr);
         return root;
     }
-    C
+    
     private TreeNode deserialize(string[] arr)
     {
         var root = new TreeNode(Convert.ToInt32(arr[0]));
