@@ -23,5 +23,15 @@ public class TreeNode
     {
         return val.ToString();
     }
+
+    public static void InorderTraversal(TreeNode root)
+    {
+        if(root != null)
+        {
+            Console.Write(root.val);
+            InorderTraversal(root.left);
+            InorderTraversal(root.right);
+        }
+    }
 }
 
