@@ -1,4 +1,4 @@
-﻿namespace TrueLeetCode.Common.Math.Combinatorics;
+﻿namespace TrueLeetCode.Common.Maths.Combinatorics;
 public static class Subset
 {
     public static List<List<T>> Find<T>(List<T> input)
