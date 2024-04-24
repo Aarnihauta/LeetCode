@@ -35,19 +35,57 @@ public class CombinatorialObjects
             }
             for (int i = 0; i < data.Count; i++)
             {
-                if(visited.Contains(i) && !withRepeat)
+                if (visited.Contains(i) && !withRepeat)
                 {
                     continue;
                 }
 
                 visited.Add(i);
                 curr.Add(data[i]);
-                
+
                 Backtrack(data, curr, visited, result);
 
                 curr.RemoveAt(curr.Count - 1);
                 visited.Remove(i);
             }
         }
+    }
+
+    public static List<int> GetNextPermutation(int k, int n)
+    {
+        bool[] was = new bool[k];
+        List<int> result = new List<int>();
+        for (int i = 0; i < n; i++)
+        {
+            int f = Factorial(n - i);
+            int alreadyWas = k / f;
+            k %= f;
+            int currentFree = 0;
+
+            for (int j = 0; j < n; j++)
+            {
+                if (was[j] == false)
+                {
+                    currentFree++;
+                    if (currentFree == alreadyWas + 1)
+                    {
+                        result.Add(j + 1);
+                        was[j] = true;
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+
+    public static int Factorial(int n)
+    {
+        int current = 1;
+        for (int i = 2; i < n; i++)
+        {
+            current *= i;
+        }
+        return current;
     }
 }
