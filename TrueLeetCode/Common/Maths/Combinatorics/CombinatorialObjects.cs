@@ -19,7 +19,7 @@ public class CombinatorialObjects
         return result;
     }
 
-    public static List<List<int>> GetPermutation(List<int> data, bool withRepeat)
+    public static List<List<int>> GetPermutation(List<int> data, bool withRepeat = false)
     {
         var result = new List<List<int>>();
 
@@ -35,7 +35,7 @@ public class CombinatorialObjects
             }
             for (int i = 0; i < data.Count; i++)
             {
-                if(visited.Contains(i) && withRepeat)
+                if(visited.Contains(i) && !withRepeat)
                 {
                     continue;
                 }
