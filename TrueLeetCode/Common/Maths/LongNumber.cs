@@ -46,11 +46,8 @@ public struct LongNumber
     private int Insert(int[] arr, ref int i, int digit)
     {
         int digitsCount = GetDigitsCount(arr[i]);
-        if (digitsCount == 0)
-        {
-            arr[i] = digit;
-        }
-        else if (digitsCount < _maxDigits)
+       
+        if (digitsCount < _maxDigits)
         {
             arr[i] = arr[i] * 10 + digit;
         }
