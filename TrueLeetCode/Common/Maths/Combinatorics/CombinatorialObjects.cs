@@ -53,23 +53,23 @@ public class CombinatorialObjects
 
     public static List<int> GetNextPermutation(int k, int n)
     {
-        bool[] was = new bool[k];
+        bool[] was = new bool[n + 1];
         List<int> result = new List<int>();
-        for (int i = 0; i < n; i++)
+        for (int i = 1; i < n + 1; i++)
         {
             int f = Factorial(n - i);
             int alreadyWas = k / f;
             k %= f;
             int currentFree = 0;
 
-            for (int j = 0; j < n; j++)
+            for (int j = 1; j < n + 1; j++)
             {
                 if (was[j] == false)
                 {
                     currentFree++;
                     if (currentFree == alreadyWas + 1)
                     {
-                        result.Add(j + 1);
+                        result.Add(j);
                         was[j] = true;
                     }
                 }
