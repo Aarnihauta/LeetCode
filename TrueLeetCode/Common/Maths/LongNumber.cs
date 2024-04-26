@@ -33,13 +33,13 @@ public struct LongNumber
 
     private int CalculateArraySize(int initialSize)
     {
-        if (initialSize % 3 == 0)
+        if (initialSize % _maxDigits == 0)
         {
-            return initialSize / 3 + 2;
+            return initialSize / _maxDigits + 2;
         }
         else
         {
-            return initialSize / 3 + 3;
+            return initialSize / _maxDigits + 3;
         }
     }
 }
