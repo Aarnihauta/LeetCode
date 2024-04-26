@@ -1,17 +1,19 @@
-﻿namespace TrueLeetCode.Common.Maths;
+﻿using System.Text;
+
+namespace TrueLeetCode.Common.Maths;
 public struct LongNumber
 {
-    private const int _maxDigits = 3;
-    private const int _base = 1000;
+    private const int _maxDigits = 4;
+    private const int _base = 10000;
     private int[] _array;
 
     public int[] ReadLong(string a)
     {
         _array = new int[CalculateArraySize(a.Length)];
-    
+
         char ch = a[0];
         int k = 0;
-        while(ch != '\n')
+        while (ch != '\n')
         {
             for (int i = _array[0]; i >= 1; i--)
             {
@@ -28,7 +30,24 @@ public struct LongNumber
             ch = a[k];
         }
 
-        return _array = _array[0..(_array.Length -1)];
+        return _array = _array[0..(_array.Length - 1)];
+    }
+
+    public void Write()
+    {
+        StringBuilder s = new StringBuilder();
+        string ls = (_base / 10).ToString();
+        for (int i = _array[0]; i >= 1; i--)
+        {
+            int l = _array[i].ToString().Length;
+            while (l < ls.Length)
+            {
+                s.Append("0");
+                l++;
+            }
+            s.Append(_array[i]);
+        }
+        Console.Write(s);
     }
 
     private int CalculateArraySize(int initialSize)
