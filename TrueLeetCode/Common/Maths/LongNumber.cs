@@ -28,7 +28,7 @@ public struct LongNumber
             ch = a[k];
         }
 
-        return _array[0..(_array.Length -1)];
+        return _array = _array[0..(_array.Length -1)];
     }
 
     private int CalculateArraySize(int initialSize)
