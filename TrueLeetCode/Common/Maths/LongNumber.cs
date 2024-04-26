@@ -2,6 +2,7 @@
 public struct LongNumber
 {
     private const int _maxDigits = 3;
+    private const int _base = 1000;
     private int[] _array;
 
     public int[] ReadLong(string a)
@@ -14,8 +15,8 @@ public struct LongNumber
         {
             for (int i = _array[0]; i >= 1; i--)
             {
-                _array[i + 1] = _array[i + 1] + (_array[i] * 10) / 1000;
-                _array[i] = (_array[i] * 10) % 1000;
+                _array[i + 1] = _array[i + 1] + (_array[i] * 10) / _base;
+                _array[i] = (_array[i] * 10) % _base;
             }
             _array[1] = _array[1] + (ch - '0');
 
