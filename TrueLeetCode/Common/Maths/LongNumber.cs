@@ -50,6 +50,26 @@ public struct LongNumber
         Console.Write(s);
     }
 
+    public LongNumber Sum(LongNumber number)
+    {
+        var c = new LongNumber();
+        int length = Math.Max(this[0], number[0]);
+        c._array = new int[length + 2];
+        c[0] = length;
+        for(int i = 1; i < length + 1; i++)
+        {
+            c[i + 1] = (c[i] + this[i] + number[i]) / _base;
+            c[i] = (c[i] + this[i] + number[i]) % _base;
+        }
+
+        if (c[c[0] + 1] > 0)
+        {
+            c[0]++;
+        }
+        c._array = c._array[0..(c._array.Length - 1)];
+        return c;
+    }
+
     private int CalculateArraySize(int initialSize)
     {
         if (initialSize % _maxDigits == 0)
@@ -59,6 +79,18 @@ public struct LongNumber
         else
         {
             return initialSize / _maxDigits + 3;
+        }
+    }
+
+    public int this[int index]
+    {
+        get
+        {
+            return _array[index];
+        }
+        private set
+        {
+            _array[index] = value;
         }
     }
 }
