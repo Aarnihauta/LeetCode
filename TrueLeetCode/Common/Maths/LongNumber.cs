@@ -1,7 +1,7 @@
 ﻿using System.Text;
 
 namespace TrueLeetCode.Common.Maths;
-public struct LongNumber
+public struct LongNumber : IComparable<LongNumber>
 {
     private const int _maxDigits = 4;
     private const int _base = 10000;
@@ -56,7 +56,7 @@ public struct LongNumber
         int length = Math.Max(this[0], number[0]);
         c._array = new int[length + 2];
         c[0] = length;
-        for(int i = 1; i < length + 1; i++)
+        for (int i = 1; i < length + 1; i++)
         {
             c[i + 1] = (c[i] + this[i] + number[i]) / _base;
             c[i] = (c[i] + this[i] + number[i]) % _base;
@@ -70,6 +70,7 @@ public struct LongNumber
         return c;
     }
 
+
     private int CalculateArraySize(int initialSize)
     {
         if (initialSize % _maxDigits == 0)
@@ -80,6 +81,27 @@ public struct LongNumber
         {
             return initialSize / _maxDigits + 3;
         }
+    }
+
+    public int CompareTo(LongNumber other)
+    {
+        if (_array[0] > other[0])
+        {
+            return 1;
+        }
+        else if (_array[0] < other[0])
+        {
+            return -1;
+        }
+
+        int result = -1;
+
+        for (int i = 1; i < _array.Length; i++)
+        {
+            result = _array[i].CompareTo(other[i]);
+        }
+
+        return result;
     }
 
     public int this[int index]

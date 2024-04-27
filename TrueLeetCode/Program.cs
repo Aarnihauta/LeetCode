@@ -1,10 +1,11 @@
 using TrueLeetCode.Common.Maths;
 
 var l = new LongNumber();
-l.ReadLong("870613029451\n");
+l.ReadLong("888888888888888\n");
 
 var r = new LongNumber();
-r.ReadLong("3475912100517461\n");
+r.ReadLong("888888888888888\n");
 
-var c = l.Sum(r);
-c.Write();
+
+var q = l.CompareTo(r);
+Console.WriteLine(q);
