@@ -1,3 +1,4 @@
-using TrueLeetCode.Common.Maths.Combinatorics;
+using TrueLeetCode.Leetcode.Greedy;
 
-CombinatorialObjects.GetNext(new int[] { 1, 4, 3, 2 });
+var l = new L881();
+l.NumRescueBoats(new int[] { 21, 40, 16, 24, 30 }, 50);
