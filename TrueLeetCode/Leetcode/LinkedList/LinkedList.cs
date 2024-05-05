@@ -13,4 +13,18 @@ public class ListNode
     {
         return val.ToString();
     }
+
+    public static ListNode Create(params int[] vals)
+    {
+        var head = new ListNode();
+        var current = head;
+        foreach(var item in vals)
+        {
+            current.val = item;
+            current.next = new ListNode();
+            current = current.next;
+        }
+
+        return head;
+    }
 }
