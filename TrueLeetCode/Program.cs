@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.LinkedList;
-using TrueLeetCode.Leetcode;
-var l = new L2816();
+using TrueLeetCode.Leetcode.DP;
 
-l.DoubleIt(ListNode.Create(6));
+var l = new L300();
+
+l.LengthOfLIS(new int[] { 7, 7, 7, 7, 7, 7, 7 });

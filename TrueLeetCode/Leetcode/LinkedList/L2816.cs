@@ -1,6 +1,4 @@
-﻿using TrueLeetCode.Leetcode.Trees;
-
-namespace TrueLeetCode.Leetcode.LinkedList;
+﻿namespace TrueLeetCode.Leetcode.LinkedList;
 
 //https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/
 public class L2816
