@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.DP;
+using TrueLeetCode.Leetcode.LinkedList;
+using TrueLeetCode.Leetcode;
+var l = new L2816();
 
-var l = new L5();
-
-l.LongestPalindrome("babadda");
+l.DoubleIt(ListNode.Create(6));

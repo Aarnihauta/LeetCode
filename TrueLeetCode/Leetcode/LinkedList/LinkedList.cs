@@ -11,18 +11,27 @@ public class ListNode
 
     public override string ToString()
     {
-        return val.ToString();
+        string str = val.ToString() + " ";
+        if (next != null)
+        {
+            str += next.ToString();
+        }
+
+        return str;
     }
 
     public static ListNode Create(params int[] vals)
     {
         var head = new ListNode();
         var current = head;
-        foreach(var item in vals)
+        for (int i = 0; i < vals.Length; i++)
         {
-            current.val = item;
-            current.next = new ListNode();
-            current = current.next;
+            current.val = vals[i];
+            if(i < vals.Length - 1)
+            {
+                current.next = new ListNode();
+                current = current.next;
+            }
         }
 
         return head;
