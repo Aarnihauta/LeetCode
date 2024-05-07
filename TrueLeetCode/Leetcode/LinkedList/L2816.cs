@@ -2,7 +2,7 @@
 
 namespace TrueLeetCode.Leetcode.LinkedList;
 
-//https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/k
+//https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/
 public class L2816
 {
     public ListNode DoubleIt(ListNode head)
