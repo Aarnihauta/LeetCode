@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.DP;
+using TrueLeetCode.Leetcode.Queue;
 
-var l = new L300();
+var l = new L506();
 
-l.LengthOfLIS(new int[] { 7, 7, 7, 7, 7, 7, 7 });
+l.FindRelativeRanks(new int[] { 10, 3, 8, 9, 4 });
