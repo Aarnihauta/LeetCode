@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.Greedy;
+using TrueLeetCode.Leetcode.DP;
 
-var l = new L3075();
+var l = new L42();
 
-l.MaximumHappinessSum(new int[] { 1,1,1,1}, 2);
+l.Trap(new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 });
