@@ -1,5 +1,5 @@
-using TrueLeetCode.Leetcode.Queue;
+using TrueLeetCode.Leetcode.Greedy;
 
-var l = new L506();
+var l = new L3075();
 
-l.FindRelativeRanks(new int[] { 10, 3, 8, 9, 4 });
+l.MaximumHappinessSum(new int[] { 1,1,1,1}, 2);
