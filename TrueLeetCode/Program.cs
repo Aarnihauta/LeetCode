@@ -1,5 +1,10 @@
-using TrueLeetCode.Leetcode.DP;
+using TrueLeetCode.Leetcode.Greedy;
 
-var l = new L53();
+var l = new L861();
 
-l.MaxSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
+l.MatrixScore(new int[][]
+{
+    new int[] {0,0,1,1},
+    new int[] {1,0,1,0},
+    new int[] {1,1,0,0},
+});
