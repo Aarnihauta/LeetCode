@@ -6,6 +6,7 @@ public class L1219
     public int GetMaximumGold(int[][] grid)
     {
         int maxGold = 0;
+
         for (int i = 0; i < grid.Length; i++)
         {
             for (int j = 0; j < grid[0].Length; j++)
@@ -19,22 +20,21 @@ public class L1219
 
         return maxGold;
     }
-
     private int DFS(int[][] grid, int i, int j)
     {
-        if (i >= grid.Length || j >= grid[0].Length || i < 0 || j < 0 || grid[i][j] == 0)
+        if (i < 0 || j < 0 || i >= grid.Length || j >= grid[0].Length || grid[i][j] == 0)
         {
             return 0;
         }
 
         int currentGold = grid[i][j];
-        grid[i][j] = 0;
         int maxGold = 0;
+        grid[i][j] = 0;
 
-        maxGold = Math.Max(currentGold, maxGold + DFS(grid, i + 1, j));
-        maxGold = Math.Max(currentGold, maxGold + DFS(grid, i - 1, j));
-        maxGold = Math.Max(currentGold, maxGold + DFS(grid, i, j + 1));
-        maxGold = Math.Max(currentGold, maxGold + DFS(grid, i, j - 1));
+        maxGold = Math.Max(maxGold, currentGold + DFS(grid, i + 1, j));
+        maxGold = Math.Max(maxGold, currentGold + DFS(grid, i - 1, j));
+        maxGold = Math.Max(maxGold, currentGold + DFS(grid, i, j + 1));
+        maxGold = Math.Max(maxGold, currentGold + DFS(grid, i, j - 1));
 
         grid[i][j] = currentGold;
 
