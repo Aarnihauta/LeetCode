@@ -1,10 +1,10 @@
-using TrueLeetCode.Leetcode.Greedy;
+using TrueLeetCode.Leetcode.Backtracking;
 
-var l = new L861();
+var l = new L1219();
 
-l.MatrixScore(new int[][]
+l.GetMaximumGold(new int[][]
 {
-    new int[] {0,0,1,1},
-    new int[] {1,0,1,0},
-    new int[] {1,1,0,0},
+    new int[] {0,6,0},
+    new int[] {5,8,7},
+    new int[] {0,9,0},
 });
