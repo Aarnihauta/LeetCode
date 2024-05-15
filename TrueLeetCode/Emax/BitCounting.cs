@@ -1,6 +1,7 @@
 ﻿namespace TrueLeetCode.Emax;
 public static class BitCounting
 {
+    private const int CHAR_BIT = 8;
     public static int HammingWeight(int n)
     {
         int res = 0;
@@ -51,5 +52,11 @@ public static class BitCounting
         }
 
         return d;
+    }
+
+    public static uint Abs(int v)
+    {
+        int mask = v >> (sizeof(int) * CHAR_BIT - 1);
+        return (uint)((v + mask) ^ mask);
     }
 }
