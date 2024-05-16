@@ -1,3 +1,5 @@
-using TrueLeetCode.Emax;
+using TrueLeetCode.Leetcode.Backtracking;
 
-BitCounting.IsPowerOf2(8);
+var l = new L40();
+
+l.CombinationSum2(new int[] { 2, 5, 2, 1, 2 }, 5);
