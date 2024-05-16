@@ -1,5 +1,5 @@
 using TrueLeetCode.Leetcode.Backtracking;
 
-var l = new L40();
+var l = new L47();
 
-l.CombinationSum2(new int[] { 2, 5, 2, 1, 2 }, 5);
+l.PermuteUnique(new int[] { 2, 2, 1, 1 });
