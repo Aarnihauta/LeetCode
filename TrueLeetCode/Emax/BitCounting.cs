@@ -59,4 +59,9 @@ public static class BitCounting
         int mask = v >> (sizeof(int) * CHAR_BIT - 1);
         return (uint)((v + mask) ^ mask);
     }
+
+    public static bool IsPowerOf2(int v)
+    {
+        return (v & (v - 1)) == 0;
+    }
 }
