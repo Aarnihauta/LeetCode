@@ -1,17 +1,10 @@
-using TrueLeetCode.Leetcode.Trees;
+using TrueLeetCode.Leetcode.Backtracking;
 
-var l = new L1325();
+var l = new L79();
 
-l.RemoveLeafNodes(new TreeNode
+l.Exist(new char[][]
 {
-    val = 1,
-    left = new TreeNode(2)
-    {
-        left = new TreeNode(2)
-    },
-    right = new TreeNode(3)
-    {
-        left = new TreeNode(2),
-        right = new TreeNode(4)
-    }
-}, 2);
+    new char[]{'A','B','C','E'},
+    new char[]{'S','F','C','S'},
+    new char[]{'A','D','E','E'}
+}, "SEE");
