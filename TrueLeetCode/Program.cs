@@ -1,10 +1,5 @@
 using TrueLeetCode.Leetcode.Backtracking;
 
-var l = new L79();
+var l = new L77();
 
-l.Exist(new char[][]
-{
-    new char[]{'A','B','C','E'},
-    new char[]{'S','F','C','S'},
-    new char[]{'A','D','E','E'}
-}, "SEE");
+l.Combine(4,2);
