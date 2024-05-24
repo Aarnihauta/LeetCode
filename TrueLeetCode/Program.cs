@@ -1,5 +1,8 @@
-using TrueLeetCode.Leetcode.Backtracking;
+using TrueLeetCode.Leetcode.Pointers;
 
-var l = new L77();
+var l = new L88();
 
-l.Combine(4,2);
+var a = new int[] { 1, 2, 40, 0, 0, 0 };
+var b = new int[] { 2, 3, 4 };
+
+l.Merge(a, 3, b, b.Length);
