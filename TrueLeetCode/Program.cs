@@ -1,8 +1,5 @@
-using TrueLeetCode.Leetcode.Pointers;
+using TrueLeetCode.Leetcode.Greedy;
 
-var l = new L88();
+var l = new L2244();
 
-var a = new int[] { 1, 2, 40, 0, 0, 0 };
-var b = new int[] { 2, 3, 4 };
-
-l.Merge(a, 3, b, b.Length);
+l.MinimumRounds(new int[] { 9,9,9,11,11,22,22,22,22,55,55 });
