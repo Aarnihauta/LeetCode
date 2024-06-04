@@ -1,5 +1,5 @@
 using TrueLeetCode.Leetcode.Greedy;
 
-var l = new L2244();
+var l = new L409();
 
-l.MinimumRounds(new int[] { 9,9,9,11,11,22,22,22,22,55,55 });
+l.LongestPalindrome("abccccdd");
