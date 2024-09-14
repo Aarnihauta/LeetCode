@@ -1,5 +1,5 @@
 using TrueLeetCode.Leetcode.DP;
 
-var l = new L72();
+var l = new L91();
 
-l.MinDistance("horse", "ros");
+l.NumDecodings("123");
